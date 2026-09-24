@@ -1,0 +1,7 @@
+benchmark,estimator,selected_dimension,anchor_fraction,audit_half,target_half,n_audit_models,n_representatives,n_anchors,effective_anchor_mass,kendall_tau_b,all_eligible_pairs,all_flips,all_flip_rate,cross_family_eligible_pairs,cross_family_flips,cross_family_flip_rate,close_cross_family_eligible_pairs,close_cross_family_flips,close_cross_family_flip_rate
+MMLU-Pro,direct_mirt_primary,32,0.3,discovery,validation,208,98,3606,12032.0,0.9468700736253606,4722,124,0.02626005929690809,3449,95,0.027544215714699914,150,60,0.4
+MMLU-Pro,direct_mirt_primary,32,0.5,discovery,validation,208,98,5992,12032.0,0.9569700210773645,4722,101,0.021389241846675136,3449,82,0.02377500724847782,150,60,0.4
+MMLU-Pro,direct_mirt_primary,32,0.7,discovery,validation,208,98,8423,12032.0,0.9662283062417013,4722,79,0.016730199068191443,3449,62,0.017976224992751522,150,49,0.32666666666666666
+MMLU-Pro,direct_mirt_primary,32,0.3,validation,discovery,208,106,3606,12032.0,0.9258693540836689,5529,202,0.036534635557967085,4021,150,0.03730415319572246,158,76,0.4810126582278481
+MMLU-Pro,direct_mirt_primary,32,0.5,validation,discovery,208,106,5992,12032.0,0.9424027354065915,5529,157,0.028395731597033822,4021,120,0.029843322556577966,158,68,0.43037974683544306
+MMLU-Pro,direct_mirt_primary,32,0.7,validation,discovery,208,106,8423,12032.0,0.9654057007254404,5529,94,0.017001266051727255,4021,67,0.01666252176075603,158,49,0.310126582278481

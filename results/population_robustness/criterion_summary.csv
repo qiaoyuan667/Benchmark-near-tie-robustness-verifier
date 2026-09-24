@@ -1,0 +1,11 @@
+variant,positive_benchmarks_out_of_5,significant_benchmarks_out_of_5,passes_direction_gate,passes_significance_gate
+owner_cap_1,4,4,True,True
+owner_cap_3,4,4,True,True
+owner_cap_5_baseline,4,4,True,True
+lexicographic_checkpoint,5,4,True,True
+strict_lineage,5,4,True,True
+omit_gemma,5,4,True,True
+omit_llama,4,4,True,True
+omit_mistral,5,5,True,True
+omit_phi,5,4,True,True
+omit_qwen,4,4,True,True

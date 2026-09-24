@@ -1,0 +1,3 @@
+benchmark,audit_half,target_half,best_dimension,selected_dimension,one_se_threshold,validation_owner_count
+MMLU-Pro,discovery,validation,128,64,0.30217448700191457,20
+MMLU-Pro,validation,discovery,128,32,0.2978221286125926,19

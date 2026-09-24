@@ -1,0 +1,51 @@
+{
+  "benchmarks": [
+    "MMLU-Pro",
+    "BBH",
+    "MMLU",
+    "HellaSwag",
+    "WinoGrande"
+  ],
+  "common_blueprint_cells": "source-by-easiness quartile from the mean of the two owner-half item intercepts",
+  "dif_cycles": 5,
+  "dif_penalty": 1.0,
+  "difficulty_strata": 4,
+  "direct_source_attribution_support_passed": true,
+  "direct_source_shift_attribution": {
+    "definition": "exact additive source contribution to cross-fitted family mean anchor-minus-full score shift",
+    "descriptive_support_rule": "pooled main replication >=70%, exact binomial p<=.05, and >=2 of 3 source-rich main benchmarks individually >=65%",
+    "selection": "two most negative and two most positive discovery-fold contributions per family; confirm sign in the swapped fold",
+    "status": "mechanism-adjacent secondary analysis added after the frozen primary item-stability test passed"
+  },
+  "elapsed_seconds": 462.590207459,
+  "experiment": "spectral_mirt_primary_item_dif_signature_stability",
+  "family_models": "reuse the frozen owner_cap_5 baseline audit models",
+  "owner_split": "reuse the frozen owner-disjoint discovery/validation halves",
+  "permutation": "shuffle validation item signatures within common blueprint cells",
+  "permutation_replicates": 500,
+  "permutation_seed": 20260828,
+  "primary_anchor_fraction": 0.5,
+  "primary_gate": "at least 3 of all 5 benchmarks pass all three stability thresholds and their one-sided permutation tests",
+  "primary_stability_gate_passed": true,
+  "protocol_written_before_item_dif_refits": true,
+  "purification_rounds": 3,
+  "source_content_gate_passed": true,
+  "source_validation": {
+    "centering_audit_note": "family-mean centering was added after a preliminary 48/48 sign result was flagged as potentially containing global family offsets; the primary item-stability protocol and results were unchanged",
+    "confirmation_half": "validation only",
+    "content_gate": "pooled validation sign replication >=70% with exact binomial p<=.05, and >=2 of 3 source-rich main benchmarks individually replicate >=65%",
+    "effect_centering": "subtract each owner-half family's all-item mean before source selection and sign confirmation",
+    "extremes_per_family_tail": 2,
+    "minimum_source_items": 20,
+    "selection_half": "discovery only"
+  },
+  "stability_thresholds": {
+    "benchmarks_required": 3,
+    "median_family_within_cell_spearman": 0.2,
+    "one_sided_permutation_p": 0.05,
+    "stable_top20_advantaged_family_agreement": 0.4,
+    "top20_overlap_precision": 0.3
+  },
+  "top_dif_fraction_within_cell": 0.2,
+  "winogrande_role": "retained in the all-five stability gate despite its null primary near-tie excess"
+}

@@ -1,0 +1,3 @@
+benchmark,audit_half,target_half,best_dimension,selected_dimension,one_se_threshold,validation_owner_count
+BBH,discovery,validation,128,128,0.3150848614541539,44
+BBH,validation,discovery,256,128,0.33709089584930224,44

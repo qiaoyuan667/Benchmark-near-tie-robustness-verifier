@@ -1,0 +1,22 @@
+{
+  "benchmarks": {
+    "BBH": 100,
+    "HellaSwag": 100,
+    "MMLU": 100,
+    "MMLU-Pro": 100,
+    "WinoGrande": 100
+  },
+  "blinded_items_sha256": "e4913018981fccfd194dc3fcc2284131291521d2c330f635822fd38fb952701d",
+  "blinded_packet_columns": [
+    "blinded_id",
+    "question_text"
+  ],
+  "blinding_key_sha256": "ad7afc68c8bcedab796a0288cd535055278ddd6638e2511704e6178ddc1b91e0",
+  "groups": {
+    "matched_control": 250,
+    "stable_high_dif": 250
+  },
+  "items": 500,
+  "pair_cell_mismatches": 0,
+  "pairs": 250
+}

@@ -1,0 +1,15 @@
+{
+  "archive_checked": false,
+  "excluded_from_own_checksum": [
+    "provenance/public_files.sha256",
+    "provenance/release_audit.json"
+  ],
+  "files": 269,
+  "git_identity_checked": true,
+  "issues": [],
+  "mode": "refresh",
+  "pdf_metadata_check": "enabled",
+  "private_exclusions_supplied": 3,
+  "python_files_parsed": 56,
+  "status": "pass"
+}

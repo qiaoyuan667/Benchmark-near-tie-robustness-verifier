@@ -1,0 +1,27 @@
+{
+  "experiment": "posthoc_within_family_near_tie_diagnostic",
+  "benchmarks": [
+    "MMLU-Pro",
+    "BBH",
+    "MMLU",
+    "HellaSwag",
+    "WinoGrande"
+  ],
+  "primary_anchor_fraction": 0.5,
+  "close_pair_threshold": "1 percentage point on frozen full score",
+  "pair_types": {
+    "cross_family": "different owner, different family",
+    "within_family": "different owner, same family"
+  },
+  "ties": "exact full-score or recomposed-score ties excluded",
+  "control": "frozen source x easiness matched-random subtests",
+  "replicates": 1000,
+  "seed_base": 20260825,
+  "specificity_statistic": "(cross-within)_low-DIF - median[(cross-within)_matched-random]",
+  "status": "post-hoc diagnostic",
+  "owner_disjoint": true,
+  "mirt_refit": false,
+  "anchor_reselection": false,
+  "primary_outputs_unchanged": true,
+  "elapsed_seconds": 335.419972959
+}

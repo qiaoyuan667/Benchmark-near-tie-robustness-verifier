@@ -1,0 +1,11 @@
+axis,cohen_kappa,raw_agreement,annotator_a_prevalence,annotator_b_prevalence
+quantitative_symbolic,0.778541563319396,0.95,0.152,0.106
+formal_rule_reasoning,0.8265191297824457,0.926,0.33,0.284
+factual_domain_knowledge,0.8819602735265385,0.942,0.452,0.41
+contextual_reading,0.872183298617686,0.946,0.704,0.69
+commonsense_narrative,0.9387855044074436,0.97,0.438,0.42
+spatial_temporal,0.652367378154766,0.84,0.408,0.284
+linguistic_wordplay,0.46926342994277276,0.954,0.026,0.064
+negation_exception,0.637033727942819,0.922,0.154,0.088
+code_structured_representation,0.38887206334097685,0.774,0.294,0.184
+distractor_discrimination,0.31265421219598155,0.688,0.86,0.564

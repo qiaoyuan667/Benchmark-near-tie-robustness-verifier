@@ -1,0 +1,25 @@
+{
+  "estimator": "direct penalized joint logistic MIRT",
+  "ridge": 0.01,
+  "intercept_penalty": 5e-05,
+  "optimizer": "Adam",
+  "learning_rate": 0.03,
+  "max_steps": 6000,
+  "stopping": "absolute training objective change <1e-6 at three 20-step checks",
+  "initializations": 2,
+  "initialization_selection": "smallest returned training penalized objective",
+  "coordinate_initialization": "zero; convex conditional problem",
+  "device": "cpu",
+  "dtype": "float32",
+  "threads": 2,
+  "coordinate_ridge_note": "fixed direct-MIRT penalty 0.01; spectral coordinate ridge 1 is not algebraically transferable",
+  "offset_clip": [
+    -6,
+    6
+  ],
+  "family_labels_in_ability_fit": false,
+  "torch_version": "2.14.0",
+  "numpy_version": "2.3.5",
+  "runner_sha256": "b002c82c6a3a0c8acd453b7d0268d39722960fc0ae53420e3d6ca737800bdef2",
+  "optimizer_source_sha256": "a7ae3633840887110e71aa651ad3ec70fd9c2ce0e4b07d414fb5adcbdc613f69"
+}

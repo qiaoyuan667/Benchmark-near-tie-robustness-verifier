@@ -1,0 +1,7 @@
+benchmark,estimator,selected_dimension,anchor_fraction,audit_half,target_half,n_audit_models,n_representatives,n_anchors,effective_anchor_mass,kendall_tau_b,all_eligible_pairs,all_flips,all_flip_rate,cross_family_eligible_pairs,cross_family_flips,cross_family_flip_rate,close_cross_family_eligible_pairs,close_cross_family_flips,close_cross_family_flip_rate
+WinoGrande,spectral_mirt_primary,8,0.3,discovery,validation,694,335,380,1267.0,0.8444270963857254,55229,4168,0.07546759854424306,34995,2222,0.06349478496928132,2786,1100,0.3948312993539124
+WinoGrande,spectral_mirt_primary,8,0.5,discovery,validation,694,335,632,1267.0,0.8983406800468725,55456,2728,0.049192152336987885,35100,1583,0.0450997150997151,2802,966,0.34475374732334046
+WinoGrande,spectral_mirt_primary,8,0.7,discovery,validation,694,335,887,1267.0,0.94675962217016,55515,1397,0.025164369990092767,35118,853,0.024289538128595023,2802,711,0.25374732334047106
+WinoGrande,spectral_mirt_primary,8,0.3,validation,discovery,694,338,380,1267.0,0.8649417575940077,56289,3677,0.06532359786103857,35754,1966,0.05498685461766516,2722,979,0.35966201322556945
+WinoGrande,spectral_mirt_primary,8,0.5,validation,discovery,694,338,632,1267.0,0.9009468803796935,56445,2702,0.04786960758260253,35832,1428,0.039852645679839246,2772,919,0.3315295815295815
+WinoGrande,spectral_mirt_primary,8,0.7,validation,discovery,694,338,887,1267.0,0.9319779559149861,56504,1839,0.032546368398697435,35846,1130,0.03152374044523796,2776,876,0.31556195965417866

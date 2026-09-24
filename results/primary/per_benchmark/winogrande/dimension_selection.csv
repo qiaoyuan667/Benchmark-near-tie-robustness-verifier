@@ -1,0 +1,3 @@
+benchmark,audit_half,target_half,best_dimension,selected_dimension,one_se_threshold,validation_owner_count
+WinoGrande,discovery,validation,32,8,0.35022277664155266,68
+WinoGrande,validation,discovery,16,8,0.3334491372312333,68

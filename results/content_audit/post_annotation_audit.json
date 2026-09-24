@@ -1,0 +1,51 @@
+{
+  "annotation_rows": 1000,
+  "annotation_rows_per_annotator": {
+    "annotator_a": 500,
+    "annotator_b": 500
+  },
+  "batch_audit": {
+    "annotator_a": {
+      "exact_blinded_id_coverage": true,
+      "log_files": 25,
+      "prompt_files": 25,
+      "raw_files": 25,
+      "raw_records": 500,
+      "unique_raw_ids": 500
+    },
+    "annotator_b": {
+      "exact_blinded_id_coverage": true,
+      "log_files": 25,
+      "prompt_files": 25,
+      "raw_files": 25,
+      "raw_records": 500,
+      "unique_raw_ids": 500
+    }
+  },
+  "blinded_items_hash_matches_pre_annotation": true,
+  "blinding_key_hash_matches_pre_annotation": true,
+  "confirmatory_axes": [],
+  "exploratory_family_direction": {
+    "dual_annotator_exploratory_axes": [],
+    "family_counts": {
+      "gemma": 14,
+      "llama": 7,
+      "mistral": 60,
+      "phi": 54,
+      "qwen": 23
+    },
+    "method": "benchmark-stratified label permutation test; BH correction over ten axes separately by annotator",
+    "permutations": 10000,
+    "stable_advantaged_family_definition": "same maximum item-family effect in discovery and validation owner halves",
+    "stable_direction_items": 158,
+    "status": "post_confirmatory_exploratory"
+  },
+  "missing_unblinded_keys": 0,
+  "pair_cell_mismatches": 0,
+  "reliability_gate_passed": true,
+  "semantic_gate_passed": false,
+  "unique_items_per_annotator": {
+    "annotator_a": 500,
+    "annotator_b": 500
+  }
+}

@@ -1,0 +1,11 @@
+benchmark,audit_half,target_half,close_cross_family_eligible_pairs,close_cross_family_flips,close_cross_family_flip_rate,close_same_family_eligible_pairs,close_same_family_flips,close_same_family_flip_rate
+MMLU-Pro,discovery,validation,150,65,0.43333333333333335,108,24,0.2222222222222222
+MMLU-Pro,validation,discovery,158,80,0.5063291139240507,148,45,0.30405405405405406
+BBH,discovery,validation,1074,477,0.4441340782122905,816,282,0.34558823529411764
+BBH,validation,discovery,1152,461,0.4001736111111111,815,259,0.3177914110429448
+MMLU,discovery,validation,1879,749,0.39861628525811604,2246,637,0.2836153161175423
+MMLU,validation,discovery,1356,567,0.41814159292035397,2277,453,0.19894598155467721
+HellaSwag,discovery,validation,2265,657,0.2900662251655629,2723,561,0.20602276900477415
+HellaSwag,validation,discovery,2268,745,0.32848324514991184,2476,501,0.20234248788368336
+WinoGrande,discovery,validation,2802,966,0.34475374732334046,2491,767,0.3079084704937776
+WinoGrande,validation,discovery,2772,919,0.3315295815295815,2918,905,0.3101439342015079

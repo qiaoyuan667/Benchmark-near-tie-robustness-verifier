@@ -1,0 +1,608 @@
+[
+  {
+    "dataset_name": "harness_winogrande_5",
+    "dataset": "winogrande",
+    "start": 0,
+    "stop": 1267
+  },
+  {
+    "dataset_name": "harness_arc_challenge_25",
+    "dataset": "arc",
+    "start": 1267,
+    "stop": 2439
+  },
+  {
+    "dataset_name": "harness_gsm8k_5",
+    "dataset": "gsm8k",
+    "start": 2439,
+    "stop": 3758
+  },
+  {
+    "dataset_name": "harness_truthfulqa_mc_0",
+    "dataset": "truthfulqa",
+    "start": 3758,
+    "stop": 4575
+  },
+  {
+    "dataset_name": "harness_hellaswag_10",
+    "dataset": "hellaswag",
+    "start": 4575,
+    "stop": 14617
+  },
+  {
+    "dataset_name": "harness_hendrycksTest_high_school_biology_5",
+    "dataset": "mmlu",
+    "start": 14617,
+    "stop": 14927
+  },
+  {
+    "dataset_name": "harness_hendrycksTest_philosophy_5",
+    "dataset": "mmlu",
+    "start": 14927,
+    "stop": 15238
+  },
+  {
+    "dataset_name": "harness_hendrycksTest_professional_accounting_5",
+    "dataset": "mmlu",
+    "start": 15238,
+    "stop": 15520
+  },
+  {
+    "dataset_name": "harness_hendrycksTest_human_aging_5",
+    "dataset": "mmlu",
+    "start": 15520,
+    "stop": 15743
+  },
+  {
+    "dataset_name": "harness_hendrycksTest_clinical_knowledge_5",
+    "dataset": "mmlu",
+    "start": 15743,
+    "stop": 16008
+  },
+  {
+    "dataset_name": "harness_hendrycksTest_college_medicine_5",
+    "dataset": "mmlu",
+    "start": 16008,
+    "stop": 16181
+  },
+  {
+    "dataset_name": "harness_hendrycksTest_virology_5",
+    "dataset": "mmlu",
+    "start": 16181,
+    "stop": 16347
+  },
+  {
+    "dataset_name": "harness_hendrycksTest_anatomy_5",
+    "dataset": "mmlu",
+    "start": 16347,
+    "stop": 16482
+  },
+  {
+    "dataset_name": "harness_hendrycksTest_public_relations_5",
+    "dataset": "mmlu",
+    "start": 16482,
+    "stop": 16592
+  },
+  {
+    "dataset_name": "harness_hendrycksTest_human_sexuality_5",
+    "dataset": "mmlu",
+    "start": 16592,
+    "stop": 16723
+  },
+  {
+    "dataset_name": "harness_hendrycksTest_security_studies_5",
+    "dataset": "mmlu",
+    "start": 16723,
+    "stop": 16968
+  },
+  {
+    "dataset_name": "harness_hendrycksTest_elementary_mathematics_5",
+    "dataset": "mmlu",
+    "start": 16968,
+    "stop": 17346
+  },
+  {
+    "dataset_name": "harness_hendrycksTest_medical_genetics_5",
+    "dataset": "mmlu",
+    "start": 17346,
+    "stop": 17446
+  },
+  {
+    "dataset_name": "harness_hendrycksTest_high_school_chemistry_5",
+    "dataset": "mmlu",
+    "start": 17446,
+    "stop": 17649
+  },
+  {
+    "dataset_name": "harness_hendrycksTest_prehistory_5",
+    "dataset": "mmlu",
+    "start": 17649,
+    "stop": 17973
+  },
+  {
+    "dataset_name": "harness_hendrycksTest_us_foreign_policy_5",
+    "dataset": "mmlu",
+    "start": 17973,
+    "stop": 18073
+  },
+  {
+    "dataset_name": "harness_hendrycksTest_high_school_microeconomics_5",
+    "dataset": "mmlu",
+    "start": 18073,
+    "stop": 18311
+  },
+  {
+    "dataset_name": "harness_hendrycksTest_high_school_government_and_politics_5",
+    "dataset": "mmlu",
+    "start": 18311,
+    "stop": 18504
+  },
+  {
+    "dataset_name": "harness_hendrycksTest_computer_security_5",
+    "dataset": "mmlu",
+    "start": 18504,
+    "stop": 18604
+  },
+  {
+    "dataset_name": "harness_hendrycksTest_global_facts_5",
+    "dataset": "mmlu",
+    "start": 18604,
+    "stop": 18704
+  },
+  {
+    "dataset_name": "harness_hendrycksTest_high_school_world_history_5",
+    "dataset": "mmlu",
+    "start": 18704,
+    "stop": 18941
+  },
+  {
+    "dataset_name": "harness_hendrycksTest_jurisprudence_5",
+    "dataset": "mmlu",
+    "start": 18941,
+    "stop": 19049
+  },
+  {
+    "dataset_name": "harness_hendrycksTest_astronomy_5",
+    "dataset": "mmlu",
+    "start": 19049,
+    "stop": 19201
+  },
+  {
+    "dataset_name": "harness_hendrycksTest_college_computer_science_5",
+    "dataset": "mmlu",
+    "start": 19201,
+    "stop": 19301
+  },
+  {
+    "dataset_name": "harness_hendrycksTest_high_school_computer_science_5",
+    "dataset": "mmlu",
+    "start": 19301,
+    "stop": 19401
+  },
+  {
+    "dataset_name": "harness_hendrycksTest_college_mathematics_5",
+    "dataset": "mmlu",
+    "start": 19401,
+    "stop": 19501
+  },
+  {
+    "dataset_name": "harness_hendrycksTest_sociology_5",
+    "dataset": "mmlu",
+    "start": 19501,
+    "stop": 19702
+  },
+  {
+    "dataset_name": "harness_hendrycksTest_machine_learning_5",
+    "dataset": "mmlu",
+    "start": 19702,
+    "stop": 19814
+  },
+  {
+    "dataset_name": "harness_hendrycksTest_conceptual_physics_5",
+    "dataset": "mmlu",
+    "start": 19814,
+    "stop": 20049
+  },
+  {
+    "dataset_name": "harness_hendrycksTest_high_school_mathematics_5",
+    "dataset": "mmlu",
+    "start": 20049,
+    "stop": 20319
+  },
+  {
+    "dataset_name": "harness_hendrycksTest_high_school_macroeconomics_5",
+    "dataset": "mmlu",
+    "start": 20319,
+    "stop": 20709
+  },
+  {
+    "dataset_name": "harness_hendrycksTest_high_school_us_history_5",
+    "dataset": "mmlu",
+    "start": 20709,
+    "stop": 20913
+  },
+  {
+    "dataset_name": "harness_hendrycksTest_professional_psychology_5",
+    "dataset": "mmlu",
+    "start": 20913,
+    "stop": 21525
+  },
+  {
+    "dataset_name": "harness_hendrycksTest_moral_disputes_5",
+    "dataset": "mmlu",
+    "start": 21525,
+    "stop": 21871
+  },
+  {
+    "dataset_name": "harness_hendrycksTest_management_5",
+    "dataset": "mmlu",
+    "start": 21871,
+    "stop": 21974
+  },
+  {
+    "dataset_name": "harness_hendrycksTest_international_law_5",
+    "dataset": "mmlu",
+    "start": 21974,
+    "stop": 22095
+  },
+  {
+    "dataset_name": "harness_hendrycksTest_high_school_physics_5",
+    "dataset": "mmlu",
+    "start": 22095,
+    "stop": 22246
+  },
+  {
+    "dataset_name": "harness_hendrycksTest_logical_fallacies_5",
+    "dataset": "mmlu",
+    "start": 22246,
+    "stop": 22409
+  },
+  {
+    "dataset_name": "harness_hendrycksTest_world_religions_5",
+    "dataset": "mmlu",
+    "start": 22409,
+    "stop": 22580
+  },
+  {
+    "dataset_name": "harness_hendrycksTest_professional_medicine_5",
+    "dataset": "mmlu",
+    "start": 22580,
+    "stop": 22852
+  },
+  {
+    "dataset_name": "harness_hendrycksTest_college_physics_5",
+    "dataset": "mmlu",
+    "start": 22852,
+    "stop": 22954
+  },
+  {
+    "dataset_name": "harness_hendrycksTest_formal_logic_5",
+    "dataset": "mmlu",
+    "start": 22954,
+    "stop": 23080
+  },
+  {
+    "dataset_name": "harness_hendrycksTest_nutrition_5",
+    "dataset": "mmlu",
+    "start": 23080,
+    "stop": 23386
+  },
+  {
+    "dataset_name": "harness_hendrycksTest_econometrics_5",
+    "dataset": "mmlu",
+    "start": 23386,
+    "stop": 23500
+  },
+  {
+    "dataset_name": "harness_hendrycksTest_high_school_geography_5",
+    "dataset": "mmlu",
+    "start": 23500,
+    "stop": 23698
+  },
+  {
+    "dataset_name": "harness_hendrycksTest_high_school_psychology_5",
+    "dataset": "mmlu",
+    "start": 23698,
+    "stop": 24243
+  },
+  {
+    "dataset_name": "harness_hendrycksTest_electrical_engineering_5",
+    "dataset": "mmlu",
+    "start": 24243,
+    "stop": 24388
+  },
+  {
+    "dataset_name": "harness_hendrycksTest_high_school_statistics_5",
+    "dataset": "mmlu",
+    "start": 24388,
+    "stop": 24604
+  },
+  {
+    "dataset_name": "harness_hendrycksTest_high_school_european_history_5",
+    "dataset": "mmlu",
+    "start": 24604,
+    "stop": 24769
+  },
+  {
+    "dataset_name": "harness_hendrycksTest_marketing_5",
+    "dataset": "mmlu",
+    "start": 24769,
+    "stop": 25003
+  },
+  {
+    "dataset_name": "harness_hendrycksTest_moral_scenarios_5",
+    "dataset": "mmlu",
+    "start": 25003,
+    "stop": 25898
+  },
+  {
+    "dataset_name": "harness_hendrycksTest_business_ethics_5",
+    "dataset": "mmlu",
+    "start": 25898,
+    "stop": 25998
+  },
+  {
+    "dataset_name": "harness_hendrycksTest_miscellaneous_5",
+    "dataset": "mmlu",
+    "start": 25998,
+    "stop": 26781
+  },
+  {
+    "dataset_name": "harness_hendrycksTest_professional_law_5",
+    "dataset": "mmlu",
+    "start": 26781,
+    "stop": 28315
+  },
+  {
+    "dataset_name": "harness_hendrycksTest_college_biology_5",
+    "dataset": "mmlu",
+    "start": 28315,
+    "stop": 28459
+  },
+  {
+    "dataset_name": "harness_hendrycksTest_abstract_algebra_5",
+    "dataset": "mmlu",
+    "start": 28459,
+    "stop": 28559
+  },
+  {
+    "dataset_name": "harness_hendrycksTest_college_chemistry_5",
+    "dataset": "mmlu",
+    "start": 28559,
+    "stop": 28659
+  },
+  {
+    "dataset_name": "ifeval",
+    "dataset": "ifeval",
+    "start": 28659,
+    "stop": 29200
+  },
+  {
+    "dataset_name": "gpqa_extended",
+    "dataset": "gpqa",
+    "start": 29200,
+    "stop": 29746
+  },
+  {
+    "dataset_name": "gpqa_main",
+    "dataset": "gpqa",
+    "start": 29746,
+    "stop": 30194
+  },
+  {
+    "dataset_name": "gpqa_diamond",
+    "dataset": "gpqa",
+    "start": 30194,
+    "stop": 30392
+  },
+  {
+    "dataset_name": "musr_murder_mysteries",
+    "dataset": "musr",
+    "start": 30392,
+    "stop": 30642
+  },
+  {
+    "dataset_name": "musr_team_allocation",
+    "dataset": "musr",
+    "start": 30642,
+    "stop": 30892
+  },
+  {
+    "dataset_name": "musr_object_placements",
+    "dataset": "musr",
+    "start": 30892,
+    "stop": 31148
+  },
+  {
+    "dataset_name": "math_algebra_hard",
+    "dataset": "math_lvl5",
+    "start": 31148,
+    "stop": 31455
+  },
+  {
+    "dataset_name": "math_intermediate_algebra_hard",
+    "dataset": "math_lvl5",
+    "start": 31455,
+    "stop": 31735
+  },
+  {
+    "dataset_name": "math_prealgebra_hard",
+    "dataset": "math_lvl5",
+    "start": 31735,
+    "stop": 31928
+  },
+  {
+    "dataset_name": "math_geometry_hard",
+    "dataset": "math_lvl5",
+    "start": 31928,
+    "stop": 32060
+  },
+  {
+    "dataset_name": "math_num_theory_hard",
+    "dataset": "math_lvl5",
+    "start": 32060,
+    "stop": 32214
+  },
+  {
+    "dataset_name": "math_precalculus_hard",
+    "dataset": "math_lvl5",
+    "start": 32214,
+    "stop": 32349
+  },
+  {
+    "dataset_name": "math_counting_and_prob_hard",
+    "dataset": "math_lvl5",
+    "start": 32349,
+    "stop": 32472
+  },
+  {
+    "dataset_name": "bbh_formal_fallacies",
+    "dataset": "bbh",
+    "start": 32472,
+    "stop": 32722
+  },
+  {
+    "dataset_name": "bbh_tracking_shuffled_objects_five_objects",
+    "dataset": "bbh",
+    "start": 32722,
+    "stop": 32972
+  },
+  {
+    "dataset_name": "bbh_disambiguation_qa",
+    "dataset": "bbh",
+    "start": 32972,
+    "stop": 33222
+  },
+  {
+    "dataset_name": "bbh_hyperbaton",
+    "dataset": "bbh",
+    "start": 33222,
+    "stop": 33472
+  },
+  {
+    "dataset_name": "bbh_geometric_shapes",
+    "dataset": "bbh",
+    "start": 33472,
+    "stop": 33722
+  },
+  {
+    "dataset_name": "bbh_object_counting",
+    "dataset": "bbh",
+    "start": 33722,
+    "stop": 33972
+  },
+  {
+    "dataset_name": "bbh_web_of_lies",
+    "dataset": "bbh",
+    "start": 33972,
+    "stop": 34222
+  },
+  {
+    "dataset_name": "bbh_tracking_shuffled_objects_three_objects",
+    "dataset": "bbh",
+    "start": 34222,
+    "stop": 34472
+  },
+  {
+    "dataset_name": "bbh_movie_recommendation",
+    "dataset": "bbh",
+    "start": 34472,
+    "stop": 34722
+  },
+  {
+    "dataset_name": "bbh_logical_deduction_seven_objects",
+    "dataset": "bbh",
+    "start": 34722,
+    "stop": 34972
+  },
+  {
+    "dataset_name": "bbh_boolean_expressions",
+    "dataset": "bbh",
+    "start": 34972,
+    "stop": 35222
+  },
+  {
+    "dataset_name": "bbh_ruin_names",
+    "dataset": "bbh",
+    "start": 35222,
+    "stop": 35472
+  },
+  {
+    "dataset_name": "bbh_penguins_in_a_table",
+    "dataset": "bbh",
+    "start": 35472,
+    "stop": 35618
+  },
+  {
+    "dataset_name": "bbh_snarks",
+    "dataset": "bbh",
+    "start": 35618,
+    "stop": 35796
+  },
+  {
+    "dataset_name": "bbh_logical_deduction_five_objects",
+    "dataset": "bbh",
+    "start": 35796,
+    "stop": 36046
+  },
+  {
+    "dataset_name": "bbh_logical_deduction_three_objects",
+    "dataset": "bbh",
+    "start": 36046,
+    "stop": 36296
+  },
+  {
+    "dataset_name": "bbh_navigate",
+    "dataset": "bbh",
+    "start": 36296,
+    "stop": 36546
+  },
+  {
+    "dataset_name": "bbh_reasoning_about_colored_objects",
+    "dataset": "bbh",
+    "start": 36546,
+    "stop": 36796
+  },
+  {
+    "dataset_name": "bbh_causal_judgement",
+    "dataset": "bbh",
+    "start": 36796,
+    "stop": 36983
+  },
+  {
+    "dataset_name": "bbh_tracking_shuffled_objects_seven_objects",
+    "dataset": "bbh",
+    "start": 36983,
+    "stop": 37233
+  },
+  {
+    "dataset_name": "bbh_sports_understanding",
+    "dataset": "bbh",
+    "start": 37233,
+    "stop": 37483
+  },
+  {
+    "dataset_name": "bbh_date_understanding",
+    "dataset": "bbh",
+    "start": 37483,
+    "stop": 37733
+  },
+  {
+    "dataset_name": "bbh_temporal_sequences",
+    "dataset": "bbh",
+    "start": 37733,
+    "stop": 37983
+  },
+  {
+    "dataset_name": "bbh_salient_translation_error_detection",
+    "dataset": "bbh",
+    "start": 37983,
+    "stop": 38233
+  },
+  {
+    "dataset_name": "mmlu_pro",
+    "dataset": "mmlu_pro",
+    "start": 38233,
+    "stop": 50265
+  }
+]

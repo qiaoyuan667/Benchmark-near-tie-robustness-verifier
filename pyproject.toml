@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "family-dif-benchmark-audit"
+version = "1.0.0"
+authors = [{name = "Anonymous"}]
+description = "Reproducibility code for family-dependent item composition and local benchmark-ranking resolution"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "numpy>=1.26,<3",
+  "pandas>=2.2,<4",
+  "scipy>=1.13,<2",
+  "scikit-learn>=1.5,<2",
+  "pyarrow>=15,<30",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10"]
+plots = ["reportlab>=4,<5", "matplotlib>=3.9,<4"]
+direct-mirt = ["torch>=2.6,<3"]
+
+[project.scripts]
+family-dif-audit = "family_dif_benchmark_audit.maintainer:main"
+family-dif-content-replay = "family_dif_benchmark_audit.interpretation.content_replay:main"
+family-dif-direct-mirt = "family_dif_benchmark_audit.ranking.direct_mirt:main"
+family-dif-discrimination = "family_dif_benchmark_audit.diagnostics.discrimination:main"
+family-dif-within-family = "family_dif_benchmark_audit.diagnostics.within_family:main"
+family-dif-capability-profile = "family_dif_benchmark_audit.diagnostics.capability_profile:main"
+family-dif-ranking = "family_dif_benchmark_audit.ranking.mirt_primary:main"
+family-dif-summary = "family_dif_benchmark_audit.ranking.summarize_v3:main"
+family-dif-gap-sensitivity = "family_dif_benchmark_audit.robustness.gap_sensitivity_v3:main"
+family-dif-owner-robustness = "family_dif_benchmark_audit.robustness.family_owner_v3:main"
+family-dif-item-stability = "family_dif_benchmark_audit.interpretation.item_stability_v3:main"
+family-dif-content-audit = "family_dif_benchmark_audit.interpretation.blinded_content_v3:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

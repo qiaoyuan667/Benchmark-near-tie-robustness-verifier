@@ -1,0 +1,73 @@
+{
+  "anchor_selection": "lowest residual family-DIF logit range within source-by-MIRT-residual-easiness stratum",
+  "benchmark": "MMLU",
+  "benchmark_key": "mmlu",
+  "bootstrap_replicates": 2000,
+  "candidate_dimensions": [
+    1,
+    2,
+    4,
+    8,
+    16,
+    32,
+    64,
+    128,
+    256
+  ],
+  "close_pair_gap": 0.01,
+  "complete_model_population": 5000,
+  "composition_bootstrap_unit_strategy": "native_source_block",
+  "composition_bootstrap_units": 57,
+  "dif_penalty": 1.0,
+  "dimension_selection": "one-SE owner-held-out and item-held-out predictive log loss",
+  "elapsed_seconds": 622.5003052499997,
+  "estimator": "family-label-free cross-fitted spectral MIRT",
+  "experiment": "mmlu_spectral_mirt_primary",
+  "families": [
+    "gemma",
+    "llama",
+    "mistral",
+    "phi",
+    "qwen"
+  ],
+  "family_labels_used_to_select_dimension": false,
+  "inputs": [
+    {
+      "path": "${PROJECT_ROOT}/outputs/routereval_raw_global/all_response_matrix_q_by_m.npy",
+      "sha256": "22d224b88d41395bf9e58abe4ca779d3e1c4473b29bcc6426243cc616ffa219e"
+    },
+    {
+      "path": "${PROJECT_ROOT}/outputs/routereval_raw_global/routereval_raw_50265_items.csv",
+      "sha256": "17643399a42a54a5d1eb2f251ac5dd53ec2ac289c87063ac39440b5831a9250e"
+    },
+    {
+      "path": "${PROJECT_ROOT}/outputs/routereval_raw_global/routereval_raw_8577_models.csv",
+      "sha256": "a36ec4df82b42d62cdf146a2961f75ae322a0fa250a629eb4ce1c092f022bbad"
+    }
+  ],
+  "interpretation_warning": "Residual DIF is measurement non-invariance, not a causal lineage effect; anchor scoring changes the item-composition estimand.",
+  "matched_random_anchor_replicates": 1000,
+  "observed_benchmark_items": 14042,
+  "owner_cap": 5,
+  "owner_disjoint_crossfit": true,
+  "primary_anchor_fraction": 0.5,
+  "purification_rounds": 3,
+  "ranking_population": "one median-accuracy checkpoint per owner-family",
+  "raw_benchmark_items": 14042,
+  "seeds": {
+    "composition_bootstrap_base": 20260824,
+    "family_split": 20260821,
+    "matched_random_base": 20260825,
+    "nested_owner_validation": 20260826,
+    "owner_bootstrap": 20261824,
+    "svd": 20260826
+  },
+  "selected_dimensions": {
+    "discovery": 128,
+    "validation": 128
+  },
+  "sensitivity_anchor_fractions": [
+    0.3,
+    0.7
+  ]
+}

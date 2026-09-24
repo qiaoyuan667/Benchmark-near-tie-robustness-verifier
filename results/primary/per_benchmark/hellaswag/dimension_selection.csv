@@ -1,0 +1,3 @@
+benchmark,audit_half,target_half,best_dimension,selected_dimension,one_se_threshold,validation_owner_count
+HellaSwag,discovery,validation,128,16,0.1616484433574088,68
+HellaSwag,validation,discovery,128,64,0.1308995093874259,68

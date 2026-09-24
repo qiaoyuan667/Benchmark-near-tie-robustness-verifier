@@ -1,0 +1,2 @@
+# Optional schematic renderer. The empirical figures use reportlab in the main pin.
+matplotlib==3.11.2

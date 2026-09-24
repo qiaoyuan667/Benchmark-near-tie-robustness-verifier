@@ -1,0 +1,27 @@
+.DS_Store
+.pytest_cache/
+__pycache__/
+*.py[cod]
+.venv/
+.venv-*/
+dist/
+build/
+tmp/
+*.egg-info/
+
+# Large or license-sensitive inputs and regenerated artifacts
+external_cache/
+external_sources/
+outputs/
+annotation_batches/
+*.pkl
+*.npy
+*.npz
+*.parquet
+*.pt
+*.safetensors
+
+# Secrets and local environment
+.env
+.env.*
+!.env.example

@@ -1,0 +1,30 @@
+{
+  "experiment": "independent_full_latent_profile_matched_diagnostic",
+  "status": "exploratory_protocol_frozen_before_new_ranking_results",
+  "benchmarks": [
+    "mmlu_pro",
+    "bbh",
+    "mmlu",
+    "hellaswag",
+    "winogrande"
+  ],
+  "replicates": 1000,
+  "seed_base": 20260924,
+  "scenarios": {
+    "random_pairing": null,
+    "optimal_unrestricted": null,
+    "caliper_1.00": 1.0,
+    "caliper_0.50": 0.5,
+    "caliper_0.25": 0.25
+  },
+  "distance": "||L_i/(s_i sqrt(M))-L_j/(s_j sqrt(M))||^2 + (b_i-b_j)^2",
+  "calipers": "both profile RMS and absolute b difference, in logits",
+  "dimension": "frozen full K, no additional dimension reduction",
+  "matching": "maximum cardinality, then minimum total cost; no replacement; same frozen blueprint cell",
+  "unmatched_policy": "keep original low-DIF anchor fixed; report restricted coverage",
+  "controls": "one uniformly random endpoint per pair, 1000 configurations; unchanged per-cell counts/weights",
+  "interpretation": "conditional diagnostic reference distribution, not a causal identification claim",
+  "python": "3.9.6",
+  "numpy": "1.26.4",
+  "scipy": "1.13.1"
+}

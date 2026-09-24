@@ -1,0 +1,76 @@
+{
+  "composition_bootstrap_replicates": 2000,
+  "experiment": "spectral_mirt_primary_score_gap_sensitivity",
+  "gaps_accuracy_units": [
+    0.0025,
+    0.005,
+    0.01,
+    0.02,
+    0.03,
+    0.05
+  ],
+  "gaps_percentage_points": [
+    0.25,
+    0.5,
+    1.0,
+    2.0,
+    3.0,
+    5.0
+  ],
+  "matched_random_control_replicates": 1000,
+  "pair_set": "cross-family, cross-owner, frozen from observed full-benchmark score",
+  "primary_anchor_fraction": 0.5,
+  "primary_gap_percentage_points": 1.0,
+  "runs": {
+    "BBH": {
+      "bootstrap_seed_for_primary_fraction": 20260924,
+      "bootstrap_strategy_by_audit_half": {
+        "discovery": "native_source_block",
+        "validation": "native_source_block"
+      },
+      "control_seed": 20260825,
+      "items": 5761,
+      "models_in_response_matrix": 3811
+    },
+    "HellaSwag": {
+      "bootstrap_seed_for_primary_fraction": 20260924,
+      "bootstrap_strategy_by_audit_half": {
+        "discovery": "contiguous_item_cluster",
+        "validation": "contiguous_item_cluster"
+      },
+      "control_seed": 20260825,
+      "items": 10042,
+      "models_in_response_matrix": 5000
+    },
+    "MMLU": {
+      "bootstrap_seed_for_primary_fraction": 20260924,
+      "bootstrap_strategy_by_audit_half": {
+        "discovery": "native_source_block",
+        "validation": "native_source_block"
+      },
+      "control_seed": 20260825,
+      "items": 14042,
+      "models_in_response_matrix": 5000
+    },
+    "MMLU-Pro": {
+      "bootstrap_seed_for_primary_fraction": 20260924,
+      "bootstrap_strategy_by_audit_half": {
+        "discovery": "item_source_block",
+        "validation": "item_source_block"
+      },
+      "control_seed": 20260825,
+      "items": 12032,
+      "models_in_response_matrix": 1823
+    },
+    "WinoGrande": {
+      "bootstrap_seed_for_primary_fraction": 20260924,
+      "bootstrap_strategy_by_audit_half": {
+        "discovery": "contiguous_item_cluster",
+        "validation": "contiguous_item_cluster"
+      },
+      "control_seed": 20260825,
+      "items": 1267,
+      "models_in_response_matrix": 5000
+    }
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "status": "all final claims used by the paper passed",
+  "benchmarks": [
+    "MMLU-Pro",
+    "BBH",
+    "MMLU",
+    "HellaSwag",
+    "WinoGrande"
+  ],
+  "main_tau_range": [
+    0.8996437802132831,
+    0.9483255040602058
+  ],
+  "main_all_pair_reversal_range": [
+    0.024578090147721,
+    0.0424491061862065
+  ],
+  "robustness_specs_per_benchmark": 10,
+  "wino_significant_robustness_specs": 1,
+  "source_sign_replications": 58,
+  "direct_source_contribution_replications": 43,
+  "content_maximum_absolute_paired_difference": 0.096,
+  "content_median_binary_cohen_kappa": 0.7154544707370809,
+  "content_median_ordinal_spearman": 0.8000840608368447,
+  "content_stable_advantaged_family_items": 158,
+  "content_semantic_gate_passed": false,
+  "composition_percentile_intervals_not_containing_observed": [
+    {
+      "benchmark": "BBH",
+      "gap_points": 0.25,
+      "observed_flip_rate": 49.10394265232975,
+      "bootstrap_ci_low": 16.173783143577587,
+      "bootstrap_ci_high": 45.28013145391194
+    },
+    {
+      "benchmark": "BBH",
+      "gap_points": 0.5,
+      "observed_flip_rate": 46.58780709736124,
+      "bootstrap_ci_low": 16.157626941253188,
+      "bootstrap_ci_high": 44.456207818193874
+    },
+    {
+      "benchmark": "WinoGrande",
+      "gap_points": 0.25,
+      "observed_flip_rate": 46.0,
+      "bootstrap_ci_low": 22.25594075183329,
+      "bootstrap_ci_high": 39.38064846999828
+    },
+    {
+      "benchmark": "WinoGrande",
+      "gap_points": 0.5,
+      "observed_flip_rate": 40.50179211469534,
+      "bootstrap_ci_low": 22.20173033934704,
+      "bootstrap_ci_high": 38.18957675615743
+    },
+    {
+      "benchmark": "WinoGrande",
+      "gap_points": 3.0,
+      "observed_flip_rate": 16.396324863883848,
+      "bootstrap_ci_low": 16.415674008337312,
+      "bootstrap_ci_high": 25.8799624732577
+    },
+    {
+      "benchmark": "WinoGrande",
+      "gap_points": 5.0,
+      "observed_flip_rate": 10.62767727546288,
+      "bootstrap_ci_low": 11.54656779474182,
+      "bootstrap_ci_high": 18.78561544743379
+    }
+  ]
+}

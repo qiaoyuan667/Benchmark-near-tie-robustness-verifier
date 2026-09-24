@@ -1,0 +1,24 @@
+{
+  "experiment": "extended_k_discrimination_matched_negative_control",
+  "benchmarks": [
+    "MMLU-Pro",
+    "BBH",
+    "MMLU",
+    "HellaSwag",
+    "WinoGrande"
+  ],
+  "primary_anchor_fraction": 0.5,
+  "discrimination": "audit-half SD across models of family-blind spectral predicted-logit offsets",
+  "heldout_diagnostics": [
+    "owner-disjoint target-half corrected item-total correlation",
+    "owner-disjoint target-half independent-item score SEM",
+    "owner-disjoint target-half weighted Cronbach alpha"
+  ],
+  "matching": "exact selected count within source x easiness x discrimination quartile; original source x easiness weights retained",
+  "replicates": 1000,
+  "original_control_seed_base": 20260825,
+  "discrimination_control_seed_base": 20260917,
+  "owner_disjoint": true,
+  "elapsed_seconds": 857.637808542,
+  "primary_outputs_unchanged": true
+}

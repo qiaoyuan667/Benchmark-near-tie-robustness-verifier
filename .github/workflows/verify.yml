@@ -1,0 +1,26 @@
+name: verify-artifact
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test-and-audit:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+      - name: Configure anonymous local commit identity
+        run: |
+          git config --local user.name Anonymous
+          git config --local user.email anonymous@example.invalid
+      - run: python -m pip install -r requirements-pinned.txt
+      - run: python -m pip install -e . --no-deps
+      - run: make verify
+      - run: git diff --exit-code

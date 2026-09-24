@@ -1,0 +1,4 @@
+axis,spearman_r,exact_agreement,mean_absolute_difference
+reasoning_steps,0.8431705619315243,0.76,0.24
+context_burden,0.8000840608368447,0.754,0.252
+ambiguity_degree,0.4723084938962224,0.744,0.258

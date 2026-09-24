@@ -1,0 +1,100 @@
+{
+  "model_score_header_max_center_error_px": 0.0,
+  "table_bottom_matches_left_content_error_px": 0.0,
+  "table_bottom_is_lowest_rule": true,
+  "table_bottom_axes_y": 0.08789994303385415,
+  "all_seven_headers_share_baseline": true,
+  "header_baseline": 0.796,
+  "header_fontsize_pt": 13.8,
+  "panel_label_fontsize_pt": 18.0,
+  "near_tie_fontsize_pt": 14.0,
+  "rank_reversal_fontsize_pt": 14.5,
+  "matching_label_fontsize_pt": 18.0,
+  "near_tie_and_reversal_bold": true,
+  "annotation_collisions": false,
+  "annotation_min_clearance_pt": 1.0,
+  "near_tie_score_min_horizontal_gap_pt": 1.4925600000000259,
+  "arrow_weight_scale": 1.45,
+  "horizontal_rule_weight_scale": 1.45,
+  "family_headers_aligned": true,
+  "header_collisions": false,
+  "text_clipped": false,
+  "models_mr": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H",
+    "I",
+    "J"
+  ],
+  "models_ld": [
+    "A",
+    "C",
+    "B",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H",
+    "I",
+    "J"
+  ],
+  "scores_mr": [
+    75.4,
+    70.4,
+    69.8,
+    66.4,
+    63.1,
+    60.6,
+    59.8,
+    56.8,
+    53.7,
+    50.4
+  ],
+  "scores_ld": [
+    75.3,
+    70.2,
+    69.7,
+    66.3,
+    63.0,
+    60.5,
+    59.7,
+    56.7,
+    53.6,
+    50.3
+  ],
+  "bar_max": 80.0,
+  "dot_counts": [
+    50,
+    30,
+    30
+  ],
+  "family_palette": {
+    "blue": "#2F64D6",
+    "coral": "#E65F38",
+    "sage": "#009D87"
+  },
+  "model_family": {
+    "A": "blue",
+    "B": "coral",
+    "C": "sage",
+    "D": "coral",
+    "E": "sage",
+    "F": "blue",
+    "G": "blue",
+    "H": "coral",
+    "I": "sage",
+    "J": "coral"
+  },
+  "same_model_color_in_both_lists": true,
+  "export_size_inches": [
+    18.0,
+    5.462021864149306
+  ],
+  "vertical_padding_pt": 2.0,
+  "horizontal_margins_unchanged": true
+}

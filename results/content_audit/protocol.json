@@ -1,0 +1,66 @@
+{
+  "annotation_reliability_gate_passed": true,
+  "annotators": {
+    "annotator_a": "gpt-5.5",
+    "annotator_b": "gpt-5.4"
+  },
+  "batch_size": 20,
+  "binary_axes": [
+    "quantitative_symbolic",
+    "formal_rule_reasoning",
+    "factual_domain_knowledge",
+    "contextual_reading",
+    "commonsense_narrative",
+    "spatial_temporal",
+    "linguistic_wordplay",
+    "negation_exception",
+    "code_structured_representation",
+    "distractor_discrimination"
+  ],
+  "blinding": "annotators receive only a random blinded_id and question text; benchmark, source, pair, group, family, and DIF values are isolated in blinding_key.csv",
+  "experiment": "mirt_residual_blinded_dual_annotator_content_audit",
+  "exploratory_family_direction": {
+    "dual_annotator_exploratory_axes": [],
+    "family_counts": {
+      "gemma": 14,
+      "llama": 7,
+      "mistral": 60,
+      "phi": 54,
+      "qwen": 23
+    },
+    "method": "benchmark-stratified label permutation test; BH correction over ten axes separately by annotator",
+    "permutations": 10000,
+    "stable_advantaged_family_definition": "same maximum item-family effect in discovery and validation owner halves",
+    "stable_direction_items": 158,
+    "status": "post_confirmatory_exploratory"
+  },
+  "input": "${AUTHORIZED_INPUT_ROOT}/item_family_signatures.csv",
+  "input_sha256": "580563d82072a526b625d1d2ca581bec8ed46b496f325539a3ee05f7efef648f",
+  "last_command": "analyze",
+  "last_command_elapsed_seconds": 21.864147417,
+  "median_non_degenerate_binary_cohen_kappa": 0.7154544707370809,
+  "median_ordinal_spearman": 0.8000840608368447,
+  "multiple_testing": "Benjamini-Hochberg separately over the ten pooled binary axes for each annotator",
+  "ordinal_axes": [
+    "reasoning_steps",
+    "context_burden",
+    "ambiguity_degree"
+  ],
+  "primary_analysis": "each annotator analyzed separately using exact paired McNemar/binomial tests; the second annotator is replication, not adjudication",
+  "primary_reliability_gate": {
+    "median_non_degenerate_binary_cohen_kappa_min": 0.45,
+    "median_ordinal_spearman_min": 0.5
+  },
+  "protocol_written_before_annotation_calls": true,
+  "reasoning_effort": "low",
+  "replicated_confirmatory_axes": [],
+  "sampling": {
+    "blinding_seed": 20260830,
+    "control": "outside the top 20% in both halves, one-to-one matched in the exact common blueprint cell",
+    "items_per_group_per_benchmark": 50,
+    "sample_seed": 20260829,
+    "stable_high_dif": "top 20% within common source-by-easiness cell in both owner halves"
+  },
+  "semantic_gate": "at least one pre-specified binary axis has the same pooled direction, BH q<=.05 in both annotators, absolute paired difference >=8 percentage points in both, and the pooled direction holds in at least 3 of 5 benchmarks for both annotators",
+  "semantic_gate_passed": false
+}

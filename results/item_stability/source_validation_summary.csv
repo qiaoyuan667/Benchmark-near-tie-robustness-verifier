@@ -1,0 +1,5 @@
+benchmark,selected_extremes,validation_sign_replicated,validation_sign_replication_rate,exact_binomial_p
+MMLU-Pro,20,20,1.0,9.5367431640625e-07
+BBH,20,20,1.0,9.5367431640625e-07
+MMLU,20,18,0.9,0.00020122528076171875
+Pooled source-rich main,60,58,0.9666666666666667,1.5881393422567669e-15

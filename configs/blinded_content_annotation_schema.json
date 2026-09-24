@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["annotations"],
+  "properties": {
+    "annotations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "blinded_id",
+          "quantitative_symbolic",
+          "formal_rule_reasoning",
+          "factual_domain_knowledge",
+          "contextual_reading",
+          "commonsense_narrative",
+          "spatial_temporal",
+          "linguistic_wordplay",
+          "negation_exception",
+          "code_structured_representation",
+          "distractor_discrimination",
+          "reasoning_steps",
+          "context_burden",
+          "ambiguity_degree",
+          "primary_reasoning_type",
+          "confidence",
+          "rationale"
+        ],
+        "properties": {
+          "blinded_id": {"type": "string"},
+          "quantitative_symbolic": {"type": "integer", "enum": [0, 1]},
+          "formal_rule_reasoning": {"type": "integer", "enum": [0, 1]},
+          "factual_domain_knowledge": {"type": "integer", "enum": [0, 1]},
+          "contextual_reading": {"type": "integer", "enum": [0, 1]},
+          "commonsense_narrative": {"type": "integer", "enum": [0, 1]},
+          "spatial_temporal": {"type": "integer", "enum": [0, 1]},
+          "linguistic_wordplay": {"type": "integer", "enum": [0, 1]},
+          "negation_exception": {"type": "integer", "enum": [0, 1]},
+          "code_structured_representation": {"type": "integer", "enum": [0, 1]},
+          "distractor_discrimination": {"type": "integer", "enum": [0, 1]},
+          "reasoning_steps": {"type": "integer", "minimum": 0, "maximum": 3},
+          "context_burden": {"type": "integer", "minimum": 0, "maximum": 3},
+          "ambiguity_degree": {"type": "integer", "minimum": 0, "maximum": 3},
+          "primary_reasoning_type": {
+            "type": "string",
+            "enum": [
+              "quantitative_symbolic",
+              "formal_rule_reasoning",
+              "factual_domain_knowledge",
+              "contextual_reading",
+              "commonsense_narrative",
+              "spatial_temporal",
+              "linguistic_wordplay",
+              "code_structured_representation",
+              "other"
+            ]
+          },
+          "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+          "rationale": {"type": "string", "maxLength": 240}
+        }
+      }
+    }
+  }
+}

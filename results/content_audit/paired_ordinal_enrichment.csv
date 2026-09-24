@@ -1,0 +1,7 @@
+annotator,axis,stable_high_mean,matched_control_mean,paired_mean_difference,wilcoxon_p,bh_q
+annotator_a,reasoning_steps,1.396,1.464,-0.068,0.07243207100822462,0.21729621302467383
+annotator_a,context_burden,1.224,1.244,-0.02,0.6303323157426113,0.9454984736139169
+annotator_a,ambiguity_degree,0.376,0.376,0.0,1.0,1.0
+annotator_b,reasoning_steps,1.368,1.396,-0.028,0.5097549666121679,0.6035825733706117
+annotator_b,context_burden,1.116,1.096,0.02,0.6035825733706117,0.6035825733706117
+annotator_b,ambiguity_degree,0.24,0.26,-0.02,0.5718898334252445,0.6035825733706117

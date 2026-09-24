@@ -1,0 +1,68 @@
+{
+  "anchor_selection": "lowest residual family-DIF logit range within source-by-MIRT-residual-easiness stratum",
+  "benchmark": "MMLU-Pro",
+  "benchmark_key": "mmlu_pro",
+  "bootstrap_replicates": 2000,
+  "candidate_dimensions": [
+    1,
+    2,
+    4,
+    8,
+    16,
+    32,
+    64,
+    128
+  ],
+  "close_pair_gap": 0.01,
+  "complete_model_population": 1823,
+  "composition_bootstrap_unit_strategy": "native_source_block",
+  "composition_bootstrap_units": 91,
+  "dif_penalty": 1.0,
+  "dimension_selection": "one-SE owner-held-out and item-held-out predictive log loss",
+  "elapsed_seconds": 532.4269037919985,
+  "estimator": "family-label-free cross-fitted spectral MIRT",
+  "experiment": "mmlu_pro_spectral_mirt_primary",
+  "families": [
+    "gemma",
+    "llama",
+    "mistral",
+    "phi",
+    "qwen"
+  ],
+  "family_labels_used_to_select_dimension": false,
+  "inputs": [
+    {
+      "path": "${PROJECT_ROOT}/outputs/routereval_raw_matrices/mmlu_pro_response_matrix.npz",
+      "sha256": "9ec19035af132836a9f13705ce503d7204805762036afe4a5c620c82b126b0fe"
+    },
+    {
+      "path": "${PROJECT_ROOT}/external_cache/mmlu_pro_test.parquet",
+      "sha256": "0e24a191921c2f453518a537a8b2117bd137e7714d4ef1565e9ba06c1ecb9ad8"
+    }
+  ],
+  "interpretation_warning": "Residual DIF is measurement non-invariance, not a causal lineage effect; anchor scoring changes the item-composition estimand.",
+  "matched_random_anchor_replicates": 1000,
+  "observed_benchmark_items": 12032,
+  "owner_cap": 5,
+  "owner_disjoint_crossfit": true,
+  "primary_anchor_fraction": 0.5,
+  "purification_rounds": 3,
+  "ranking_population": "one median-accuracy checkpoint per owner-family",
+  "raw_benchmark_items": 12032,
+  "seeds": {
+    "composition_bootstrap_base": 20260824,
+    "family_split": 20260821,
+    "matched_random_base": 20260825,
+    "nested_owner_validation": 20260826,
+    "owner_bootstrap": 20261824,
+    "svd": 20260826
+  },
+  "selected_dimensions": {
+    "discovery": 64,
+    "validation": 32
+  },
+  "sensitivity_anchor_fractions": [
+    0.3,
+    0.7
+  ]
+}

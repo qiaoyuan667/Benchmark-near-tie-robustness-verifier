@@ -1,0 +1,8 @@
+# Separate environment used for the direct logistic-MIRT comparison.
+# Do not replace the spectral environment: strict ties are version-sensitive.
+numpy==2.3.5
+pandas==2.2.3
+scipy==1.18.1
+scikit-learn==1.9.0
+pyarrow==25.0.1
+torch==2.14.0

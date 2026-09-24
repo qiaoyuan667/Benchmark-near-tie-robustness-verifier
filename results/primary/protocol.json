@@ -1,0 +1,27 @@
+{
+  "analysis_version": "submission",
+  "pairwise_exact_common_checks": [
+    [
+      "MMLU-Pro",
+      "BBH"
+    ],
+    [
+      "MMLU",
+      "HellaSwag"
+    ],
+    [
+      "HellaSwag",
+      "WinoGrande"
+    ]
+  ],
+  "primary_anchor_fraction": 0.5,
+  "primary_estimator": "family-label-free cross-fitted spectral MIRT",
+  "runs": {
+    "BBH": "results/primary/per_benchmark/bbh",
+    "HellaSwag": "results/primary/per_benchmark/hellaswag",
+    "MMLU": "results/primary/per_benchmark/mmlu",
+    "MMLU-Pro": "results/primary/per_benchmark/mmlu_pro",
+    "WinoGrande": "results/primary/per_benchmark/winogrande"
+  },
+  "selection_protocol": "configs/analysis_protocol.json"
+}

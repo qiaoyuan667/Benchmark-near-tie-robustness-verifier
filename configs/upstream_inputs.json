@@ -1,0 +1,13 @@
+{
+  "upstream": "https://huggingface.co/datasets/linggm/RouterEval",
+  "score_zip_sha256": "21e0429f549898afdf229dac9d7f77c49b5ff8061340d8b86ed6031a38a54077",
+  "source_sha256": {
+    "leaderboard_old.pkl": "8c9d7189697d323d1110e9518ec7cf904d885e36b38cb1859a787135f144e7e4",
+    "leaderboard_new.pkl": "5417ec6b1556290e8c06ad387a5cc44438aeb8434b9bb4a803c10bd4d4ac5c47",
+    "leaderboard_mmlu_pro.pkl": "1c33f8c5a09ac6bf08f44644984f900b1de6b57e996e5ab5a515c8a29f0f6918"
+  },
+  "mmlu_pro_parquet_sha256": "0e24a191921c2f453518a537a8b2117bd137e7714d4ef1565e9ba06c1ecb9ad8",
+  "expected_global_matrix_sha256": "22d224b88d41395bf9e58abe4ca779d3e1c4473b29bcc6426243cc616ffa219e",
+  "mmlu_pro_responses_int8_sha256": "245f25ca08633a73c92f95fee02c084363a4d7a7205e8aca2b43235f2157eca7",
+  "mmlu_pro_model_order_utf8_sha256": "8e87a3491de8967c55d6e94a92c1f5eeaa504364ba7c2319754e8363cb48548e"
+}

@@ -1,0 +1,22 @@
+[
+  {
+    "benchmark": "MMLU-Pro",
+    "benchmark_key": "mmlu_pro",
+    "audit_half": "discovery",
+    "target_half": "validation",
+    "axes_agree_to_1e_12": true,
+    "owners_disjoint": true,
+    "low_dif_counts_reproduced": true,
+    "original_controls_reproduced": 10
+  },
+  {
+    "benchmark": "MMLU-Pro",
+    "benchmark_key": "mmlu_pro",
+    "audit_half": "validation",
+    "target_half": "discovery",
+    "axes_agree_to_1e_12": true,
+    "owners_disjoint": true,
+    "low_dif_counts_reproduced": true,
+    "original_controls_reproduced": 10
+  }
+]
