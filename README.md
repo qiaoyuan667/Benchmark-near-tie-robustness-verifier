@@ -65,6 +65,8 @@ These commands check the packaged code and released numerical claims. They do
 not rerun the full five-benchmark estimation. The number of tests may change as
 coverage improves; success means all executed tests pass. PyTorch tests are
 skipped when PyTorch is absent and require the separate direct-MIRT environment.
+Two Git-identity fixture tests are explicitly skipped when the Git executable
+is unavailable; numeric workflows and a ZIP's file audit do not require Git.
 Numerical figure
 checks are recorded in `../audit-data/outputs/paper_figures/verification.json`.
 The release audit prints its verification result and compares the public files

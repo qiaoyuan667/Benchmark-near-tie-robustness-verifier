@@ -18,6 +18,11 @@ no original model-owner identifiers or local machine paths.
 - A separate direct-MIRT environment installed successfully. The spectral
   suite passed 115 tests, with the optional PyTorch module skipped. All three
   direct-MIRT tests passed in its own environment.
+- The anonymous ZIP was extracted without Git history, installed into a new
+  virtual environment using the README commands, and passed tests and the file
+  audit. With the Git executable additionally removed from `PATH`, the suite
+  passed 113 tests and explicitly skipped the two Git fixtures plus the optional
+  PyTorch module; the ZIP file audit still passed.
 - All 12 installed entry points and all 13 helper-tool help interfaces were
   exercised. The installed-command smoke workflow passed all 35 checks with
   plotting dependencies present. This includes actual default and quick
@@ -119,6 +124,9 @@ six content-replay tables are additional checks outside that 91-table total.
    BLAS pools. Apple Accelerate is not exposed by `threadpoolctl`.
 7. Upstream download URLs now pin immutable revisions instead of mutable branch
    tips. Both pinned downloads were checked against the existing frozen hashes.
+8. Two identity-fixture tests assumed the Git executable was installed even for
+   ZIP readers. They now explicitly skip if Git is absent; they still execute
+   in Git-enabled environments and CI. Numeric tests are not skipped for this.
 
 Regression tests cover the corrected failure modes. The new
 `tools/compare_reproduction.py` reports missing and mismatching reference tables

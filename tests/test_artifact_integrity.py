@@ -3,6 +3,7 @@ import hashlib
 import importlib.util
 import json
 import io
+import shutil
 import subprocess
 import zipfile
 from pathlib import Path
@@ -226,6 +227,7 @@ def test_local_build_artifacts_are_ignored_but_archive_rejects_them(tmp_path):
     assert any(i["issue"] == "forbidden_binary_or_log" for i in issues)
 
 
+@pytest.mark.skipif(shutil.which('git') is None, reason='Optional Git identity fixture requires Git')
 def test_git_requires_anonymous_author_and_committer(tmp_path):
     subprocess.run(["git", "init", "-q", str(tmp_path)], check=True)
     def git(*args):
@@ -241,6 +243,7 @@ def test_git_requires_anonymous_author_and_committer(tmp_path):
     assert "Synthetic Test Identity" not in json.dumps(findings)
 
 
+@pytest.mark.skipif(shutil.which('git') is None, reason='Optional Git identity fixture requires Git')
 def test_reader_clone_does_not_require_publisher_git_configuration(tmp_path):
     subprocess.run(["git", "init", "-q", str(tmp_path)], check=True)
     command = ["git", "-C", str(tmp_path)]
