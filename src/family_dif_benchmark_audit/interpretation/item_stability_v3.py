@@ -49,6 +49,8 @@ STABILITY_THRESHOLDS = {
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--protocol-only", action="store_true")
+    parser.add_argument("--include-question-text", action="store_true",
+                        help="Include authorized local question text in optional example exports; not needed for statistics")
     parser.add_argument(
         "--permutation-replicates", type=int, default=PERMUTATION_REPLICATES
     )
@@ -572,6 +574,13 @@ def load_questions(
     return questions
 
 
+def example_questions(benchmark, item_metadata, n_items, include_text=False):
+    """Question strings annotate examples only; never require them for numeric fits."""
+    if include_text:
+        return load_questions(benchmark, item_metadata, n_items)
+    return np.full(n_items, "", dtype=object)
+
+
 def extreme_examples(
     selected: pd.DataFrame,
     sources: np.ndarray,
@@ -946,7 +955,8 @@ def main() -> None:
         source_parts.append(all_sources)
         if not selected_sources.empty:
             selected_source_parts.append(selected_sources)
-            questions = load_questions(benchmark, item_metadata, responses.shape[0])
+            questions = example_questions(benchmark, item_metadata, responses.shape[0],
+                                          include_text=args.include_question_text)
             example_parts.append(
                 extreme_examples(
                     selected_sources,
@@ -1066,6 +1076,7 @@ def main() -> None:
     with (OUTPUT / "protocol.json").open(encoding="utf-8") as handle:
         saved_protocol = json.load(handle)
     saved_protocol.update(
+        question_text_in_examples=args.include_question_text,
         elapsed_seconds=float(time.monotonic() - started),
         primary_stability_gate_passed=primary_pass,
         source_content_gate_passed=content_pass,

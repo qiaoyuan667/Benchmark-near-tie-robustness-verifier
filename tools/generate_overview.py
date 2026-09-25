@@ -23,7 +23,7 @@ from matplotlib.path import Path as MplPath
 from matplotlib.transforms import Bbox
 
 
-OUT_DIR = Path("figures")
+OUT_DIR = Path("outputs/overview")
 STEM = "overview"
 SEED = 27
 FIGSIZE = (18.0, 6.0)

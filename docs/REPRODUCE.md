@@ -195,6 +195,13 @@ within-cell permutations, with minimum empirical p-value 1/501. Fields using
 item groups. Threshold flags retained in implementation outputs are operational
 checks, not universally validated standards of metric quality.
 
+Item-stability statistics require only the numeric inputs. The optional
+`extreme_source_examples.csv` contains empty question strings by default;
+item selection and numerical effect columns are unchanged. To include question
+text, explicitly use `family-dif-item-stability --include-question-text` with
+authorized local question sources already aligned as described in the content
+guide. Text is not used in the fits, permutations, or item-group attribution.
+
 ### Additional matching and specificity diagnostics
 
 ```sh
@@ -250,7 +257,11 @@ python tools/summarize_direct_mirt.py --data-root ../audit-data
 ```
 
 The runner uses direct penalized joint logistic MIRT, CPU float32 fitting,
-two threads, Adam, up to 6,000 steps, and two initializations for joint fits.
+two PyTorch threads, Adam, up to 6,000 steps, and two initializations for joint
+fits. It preserves the original startup defaults `OPENBLAS_NUM_THREADS=2` and
+`OMP_NUM_THREADS=2` and applies `--threads` to BLAS pools supported by
+`threadpoolctl`; some platform libraries, including Apple Accelerate, are not
+exposed by that controller.
 The conditional coordinate fit uses the fixed trained item parameters. The
 objective-plateau stopping rule and all penalties are recorded in
 `direct_mirt_settings.json`; failure to meet the stopping rule raises an error.
@@ -299,6 +310,22 @@ The primary, gap, and additional-diagnostic implementations contain internal
 consistency checks. Capability-profile outputs additionally support
 `--verify-only`. A complete numerical rerun should record its environment and
 its comparisons; the packaged aggregates alone do not document a fresh rerun.
+
+After completing the spectral stages, compare all released CSV fields with:
+
+```sh
+python tools/compare_reproduction.py --data-root ../audit-data \
+  --report ../audit-data/spectral_comparison.json
+```
+
+The command fails on missing or mismatching tables. Integer columns must match
+exactly; other numerical columns use `rtol=atol=1e-12`. Additional private
+columns are ignored, but released columns and row order are preserved. It
+never modifies the regenerated outputs or reference tables. Select analyses
+with `--analyses primary gap_sensitivity`, or use `--analyses direct_mirt`
+after the separate direct-MIRT run and summary. `--allow-missing` is only for
+inspecting an unfinished run: its report explicitly marks incomplete coverage.
+Offline content replay has its own six-table comparison described above.
 
 To redraw the validated public figures in a separate destination:
 

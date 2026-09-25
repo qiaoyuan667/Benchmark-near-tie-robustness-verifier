@@ -31,6 +31,9 @@ An alternative local output directory is:
 python tools/generate_overview.py --output-dir outputs/overview --stem overview --dpi 300
 ```
 
+`outputs/overview` is also the default destination; running the generator
+without arguments does not overwrite the shipped `figures/` references.
+
 The generator retains the established drawing without redesign: dot counts,
 random seed, model ordering, scores, family assignments, colors, line widths,
 label weights, and geometry are fixed in the script. Its built-in layout

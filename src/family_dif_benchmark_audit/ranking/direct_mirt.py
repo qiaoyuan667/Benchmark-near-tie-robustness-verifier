@@ -1,6 +1,12 @@
 """Repeat the primary audit with direct penalized joint logistic MIRT."""
 from __future__ import annotations
 
+import os
+
+# Preserve the original runner's startup defaults before importing NumPy.
+os.environ.setdefault('OPENBLAS_NUM_THREADS', '2')
+os.environ.setdefault('OMP_NUM_THREADS', '2')
+
 import argparse
 import hashlib
 import json
@@ -146,9 +152,15 @@ def main(argv=None):
     parser.add_argument('--max-steps', type=int, default=6000)
     parser.add_argument('--threads', type=int, default=2)
     args = parser.parse_args(argv)
-    import torch
     if args.max_steps < 1 or args.threads < 1:
         parser.error('max-steps and threads must be positive')
+    from threadpoolctl import threadpool_limits
+    with threadpool_limits(limits=args.threads):
+        run(args)
+
+
+def run(args):
+    import torch
     directory = args.output_dir or PROJECT_ROOT / 'outputs/direct_mirt' / f'{args.benchmark}_family_ranking_impact'
     if (directory / 'protocol.json').exists():
         raise RuntimeError('Completed output exists; choose a new output directory')
@@ -159,7 +171,8 @@ def main(argv=None):
         max_steps=args.max_steps, stopping='absolute training objective change <1e-6 at three 20-step checks',
         initializations=2, initialization_selection='smallest returned training penalized objective',
         coordinate_initialization='zero; conditional item parameters fixed', device='cpu', dtype='float32',
-        threads=args.threads, offset_clip=[-6, 6], family_labels_in_ability_fit=False,
+        threads=args.threads, thread_scope='PyTorch and threadpoolctl-supported BLAS pools',
+        offset_clip=[-6, 6], family_labels_in_ability_fit=False,
         coordinate_ridge_note='direct penalty 0.01; spectral coordinate ridge 1 is not algebraically transferable',
         torch_version=torch.__version__, numpy_version=np.__version__,
         paper_optimizer_settings=args.max_steps == 6000 and args.threads == 2,

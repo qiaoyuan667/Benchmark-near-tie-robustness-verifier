@@ -26,3 +26,20 @@ def test_no_false_convergence_after_one_optimizer_step():
     y = np.random.default_rng(2).binomial(1, .5, (12, 10)).astype('float32')
     *_, info = fit(y, 1, 'cpu', 3, 1)
     assert info['converged'] is False
+
+
+def test_command_limits_blas_as_well_as_torch_configuration(monkeypatch):
+    from threadpoolctl import threadpool_info
+    from family_dif_benchmark_audit.ranking import direct_mirt
+    seen = []
+
+    def inspect(args):
+        assert args.threads == 2
+        pools = [p for p in threadpool_info() if p['user_api'] == 'blas']
+        # Apple Accelerate is not exposed by threadpoolctl; Linux/OpenBLAS is.
+        assert all(p['num_threads'] == 2 for p in pools)
+        seen.append(True)
+
+    monkeypatch.setattr(direct_mirt, 'run', inspect)
+    direct_mirt.main(['--benchmark', 'winogrande', '--threads', '2'])
+    assert seen

@@ -4,13 +4,13 @@
     "provenance/public_files.sha256",
     "provenance/release_audit.json"
   ],
-  "files": 273,
+  "files": 276,
   "git_identity_checked": true,
   "issues": [],
   "local_git_identity_checked": true,
   "mode": "refresh",
   "pdf_metadata_check": "enabled",
   "private_exclusions_supplied": 3,
-  "python_files_parsed": 58,
+  "python_files_parsed": 61,
   "status": "pass"
 }
