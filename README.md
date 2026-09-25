@@ -63,6 +63,22 @@ Numerical figure
 checks are recorded in `../audit-data/outputs/paper_figures/verification.json`.
 The release audit prints its verification result and compares the public files
 with the shipped checksums under `provenance/`; it does not rewrite them.
+It checks published commit identities, not the reader's local Git identity.
+Release authors additionally use `--publisher-check`; packaging and checksum
+refresh always require anonymous local Git configuration.
+
+For an installed-command smoke test, including synthetic maintainer runs,
+the Python API, content-statistics replay, and empirical figure generation:
+
+```sh
+python tools/smoke_check.py --output-dir ../command-check
+```
+
+Use a new output directory on each run. This test makes no model calls and does
+not replace response-level paper reproduction. It writes individual command
+logs and `smoke_verification.json`.
+The optional schematic help check is skipped if Matplotlib is absent; its
+separate installation and rendering commands are in [FIGURES.md](docs/FIGURES.md).
 
 The pinned requirements record direct dependency versions, not a complete
 transitive lockfile. Exact-tie pair counting is sensitive to floating-point

@@ -44,10 +44,11 @@ The authoritative checksum contract is `configs/upstream_inputs.json`:
 | MMLU-Pro test parquet | `0e24a191921c2f453518a537a8b2117bd137e7714d4ef1565e9ba06c1ecb9ad8` |
 | Prepared global response matrix | `22d224b88d41395bf9e58abe4ca779d3e1c4473b29bcc6426243cc616ffa219e` |
 
-Individual score-file hashes are also in that configuration. The upstream
-download URLs may serve newer bytes in the future; a mismatch is an explicit
-failure, not permission to skip verification. Obtain the matching trusted
-version and record any intentionally changed input as a new analysis.
+Individual score-file hashes and revision-pinned download URLs are also in
+that configuration. Downloads use immutable upstream commit IDs, not `main`.
+A checksum mismatch is an explicit failure, not permission to skip verification.
+Record any intentionally changed input as a new analysis. Upstream access or
+availability can still change independently of this repository.
 
 If the inputs are already available locally:
 

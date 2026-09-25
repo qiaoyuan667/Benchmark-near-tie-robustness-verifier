@@ -50,7 +50,9 @@ were reproduced; record the actual test outcome and any full-data reruns.
   the source has an owner.
 - If Git history is included in the repository, use `Anonymous` for both author
   and committer and a neutral email, such as `anonymous@example.org`. The audit
-  checks every reachable commit plus local identity configuration. A new commit
+  checks every reachable commit; `--publisher-check`, `--refresh`, and ZIP
+  packaging also check local identity configuration. Reader verification does
+  not require changing the reader's Git identity. A new commit
   with an anonymous name does not anonymize existing history.
 - A personal account URL still identifies the account owner even when commit
   names are anonymous. Inspect the reviewer-facing URL and repository profile
@@ -65,7 +67,7 @@ private search terms or matching text; terms in filenames are redacted too.
 ## 4. Verify the existing manifest without changing it
 
 ```bash
-PYTHONDONTWRITEBYTECODE=1 python tools/audit_release.py --verify
+PYTHONDONTWRITEBYTECODE=1 python tools/audit_release.py --verify --publisher-check
 ```
 
 `--verify` is the default. Missing, added, removed or modified public files make

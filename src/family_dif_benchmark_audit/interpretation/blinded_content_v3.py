@@ -30,7 +30,7 @@ from .._paths import PROJECT_ROOT
 HERE = PROJECT_ROOT
 INPUT = HERE / "outputs/v3_item_dif_signature_stability/item_family_signatures.csv"
 OUTPUT = HERE / "outputs/v3_blinded_content_annotation"
-SCHEMA = HERE / "configs/blinded_content_annotation_schema.json"
+SCHEMA = Path(__file__).resolve().parents[3] / "configs/blinded_content_annotation_schema.json"
 QUESTION_FILE: Path | None = None
 ITEMS_PER_GROUP_PER_BENCHMARK = 50
 SAMPLE_SEED = 20260829
@@ -363,7 +363,6 @@ def run_annotation_batch(
         command,
         input=json.dumps(request, ensure_ascii=False),
         text=True,
-        cwd=HERE,
         capture_output=True,
         check=False,
     )

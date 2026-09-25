@@ -1,5 +1,7 @@
 """Public workflow wrappers must preserve the frozen numerical comparisons."""
 import importlib.util
+import json
+import re
 from pathlib import Path
 
 import pandas as pd
@@ -22,6 +24,16 @@ def test_changed_upstream_is_rejected_before_deserialization(tmp_path):
     path.write_bytes(b'not the pinned upstream file')
     with pytest.raises(ValueError, match='Checksum mismatch'):
         prep.verified(path, '0' * 64)
+
+
+def test_downloads_pin_immutable_revisions_and_keep_data_external():
+    spec = json.loads((ROOT / 'configs/upstream_inputs.json').read_text())
+    for key in ('score_zip_url', 'mmlu_pro_parquet_url'):
+        assert re.search(r'/resolve/[0-9a-f]{40}/', spec[key])
+    prep = load_tool('prepare_inputs')
+    with pytest.raises(SystemExit):
+        prep.main(['--data-root', str(ROOT / 'private-inputs')])
+    assert not (ROOT / 'private-inputs').exists()
 
 
 def test_workflow_keeps_all_five_benchmarks_and_three_diagnostics(tmp_path):

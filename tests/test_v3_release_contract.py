@@ -1,4 +1,5 @@
 import json
+import importlib.util
 from pathlib import Path
 
 import numpy as np
@@ -6,6 +7,9 @@ import pandas as pd
 
 
 ROOT = Path(__file__).resolve().parents[1]
+_spec = importlib.util.spec_from_file_location("release_contract_audit", ROOT / "tools/audit_release.py")
+_audit = importlib.util.module_from_spec(_spec)
+_spec.loader.exec_module(_audit)
 BENCHMARKS = ["MMLU-Pro", "BBH", "MMLU", "HellaSwag", "WinoGrande"]
 BENCHMARK_KEYS = ["mmlu_pro", "bbh", "mmlu", "hellaswag", "winogrande"]
 AXES = {
@@ -186,7 +190,7 @@ def test_annotation_rubric_and_schema_cover_all_frozen_axes():
 
 def test_public_tree_contains_no_forbidden_binary_or_sensitive_result_columns():
     forbidden = {".pkl", ".npy", ".npz", ".parquet", ".pt", ".safetensors"}
-    assert not [path for path in ROOT.rglob("*") if path.suffix.lower() in forbidden]
+    assert not [path for path in _audit.public_paths(ROOT) if path.suffix.lower() in forbidden]
     sensitive = {"question", "question_text", "problem", "rationale", "prompt"}
     for path in (ROOT / "results").rglob("*.csv"):
         columns = set(pd.read_csv(path, nrows=0).columns)

@@ -23,7 +23,7 @@ def main():
         parser.error('Output exists; choose a new filename to preserve the existing archive')
     if any(not term.strip() for term in args.deny_term):
         parser.error('Private exclusions must not be empty')
-    issues, hashes, _ = audit.collect_tree(root, args.deny_term)
+    issues, hashes, _ = audit.collect_tree(root, args.deny_term, check_local_identity=True)
     issues += audit.verify_manifest(root / audit.MANIFEST, hashes)
     if issues:
         parser.error('Release verification failed; run audit_release.py --verify for details')

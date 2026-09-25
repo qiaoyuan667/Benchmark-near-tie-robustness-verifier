@@ -12,6 +12,7 @@ import zipfile
 import csv
 import hashlib
 import json
+import os
 import re
 from pathlib import Path, PurePosixPath
 
@@ -253,7 +254,7 @@ def content_issues(name, data, deny_terms=()):
     return result
 
 
-def check_git_identity(root):
+def check_git_identity(root, check_local_identity=False):
     if not (root / ".git").exists():
         return []
     issues, command = [], ["git", "-C", str(root)]
@@ -267,10 +268,11 @@ def check_git_identity(root):
             if len(v) != 4 or v[0] != "Anonymous" or v[2] != "Anonymous" or any(v[i].lower() not in emails for i in (1, 3)):
                 issues.append(issue(".git", "nonanonymous_commit_identity"))
                 break
-    for key, allowed in (("user.name", {"Anonymous"}), ("user.email", emails)):
-        value = subprocess.run(command + ["config", "--local", "--get", key], capture_output=True, text=True)
-        if value.stdout.strip() not in allowed:
-            issues.append(issue(".git", "nonanonymous_or_missing_local_git_identity", field=key))
+    if check_local_identity:
+        for key, allowed in (("user.name", {"Anonymous"}), ("user.email", emails)):
+            value = subprocess.run(command + ["config", "--local", "--get", key], capture_output=True, text=True)
+            if value.stdout.strip() not in allowed:
+                issues.append(issue(".git", "nonanonymous_or_missing_local_git_identity", field=key))
     return issues
 
 
@@ -302,9 +304,20 @@ def check_contract(root, names):
     return issues
 
 
-def collect_tree(root, deny_terms=(), contract=True):
+def public_paths(root):
+    """Walk the public tree without traversing local environments or outputs."""
+    def operational(name):
+        return name in IGNORED_OPERATIONAL_PATH_PARTS or name.endswith(".egg-info") or name.startswith(".venv-")
+    for directory, subdirs, filenames in os.walk(root, followlinks=False):
+        subdirs[:] = sorted(name for name in subdirs if not operational(name))
+        for name in subdirs + sorted(filenames):
+            if not operational(name):
+                yield Path(directory) / name
+
+
+def collect_tree(root, deny_terms=(), contract=True, check_local_identity=False):
     issues, hashes, python_count = [], {}, 0
-    for path in sorted(root.rglob("*")):
+    for path in sorted(public_paths(root)):
         rel = path.relative_to(root)
         if IGNORED_OPERATIONAL_PATH_PARTS.intersection(rel.parts) or any(p.endswith(".egg-info") or p.startswith(".venv-") for p in rel.parts):
             continue
@@ -322,7 +335,7 @@ def collect_tree(root, deny_terms=(), contract=True):
         python_count += path.suffix == ".py"
     if contract:
         issues.extend(check_contract(root, set(hashes)))
-    issues.extend(check_git_identity(root))
+    issues.extend(check_git_identity(root, check_local_identity=check_local_identity))
     return issues, hashes, python_count
 
 
@@ -401,13 +414,16 @@ def main(argv=None):
     mode.add_argument("--verify", action="store_true", help="Read-only verification (default).")
     mode.add_argument("--refresh", action="store_true", help="Explicitly replace checksums after a clean content audit.")
     parser.add_argument("--root", type=Path, default=ROOT)
+    parser.add_argument("--publisher-check", action="store_true",
+                        help="Also require anonymous local Git configuration; not needed by readers.")
     parser.add_argument("--zip", dest="archive", type=Path, help="Check a ZIP against the audited public tree.")
     parser.add_argument("--deny-term", action="append", default=[], metavar="PRIVATE_TERM", help="Private case-insensitive exclusion; repeat as needed. Matches are never echoed.")
     args = parser.parse_args(argv)
     if any(not term.strip() for term in args.deny_term):
         parser.error("private exclusions must not be empty")
     root = args.root.resolve()
-    issues, hashes, count = collect_tree(root, args.deny_term)
+    publisher_check = args.publisher_check or args.refresh
+    issues, hashes, count = collect_tree(root, args.deny_term, check_local_identity=publisher_check)
     if not args.refresh:
         issues.extend(verify_manifest(root / MANIFEST, hashes))
     if args.archive:
@@ -420,6 +436,7 @@ def main(argv=None):
     report = redact({"status": "fail" if issues else "pass", "mode": "refresh" if args.refresh else "verify",
                      "files": len(hashes), "python_files_parsed": count, "private_exclusions_supplied": len(args.deny_term),
                      "pdf_metadata_check": pdf_check, "git_identity_checked": (root / ".git").exists(),
+                     "local_git_identity_checked": publisher_check and (root / ".git").exists(),
                      "archive_checked": args.archive is not None, "excluded_from_own_checksum": sorted(EXCLUDED), "issues": issues}, args.deny_term)
     if args.refresh and not issues:
         (root / MANIFEST).parent.mkdir(parents=True, exist_ok=True)

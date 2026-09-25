@@ -16,11 +16,17 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
           cache: pip
-      - name: Configure anonymous local commit identity
+      - name: Install as a reader using the documented in-repository environment
         run: |
-          git config --local user.name Anonymous
-          git config --local user.email anonymous@example.invalid
-      - run: python -m pip install -r requirements-pinned.txt
-      - run: python -m pip install -e . --no-deps
+          python -m venv .venv
+          .venv/bin/python -m pip install -r requirements-pinned.txt
+          .venv/bin/python -m pip install -e . --no-deps
+          echo "$GITHUB_WORKSPACE/.venv/bin" >> "$GITHUB_PATH"
       - run: make verify
+      - run: python tools/smoke_check.py --output-dir "$RUNNER_TEMP/command-check"
+      - name: Check plotting does not change numerical pins
+        run: |
+          python -m pip install -r requirements-figures.txt
+          python -m pip check
+          PYTHONDONTWRITEBYTECODE=1 python tools/generate_overview.py --output-dir "$RUNNER_TEMP/overview"
       - run: git diff --exit-code

@@ -107,7 +107,10 @@ its chosen provider and write exactly one JSON response to standard output:
 ```
 
 Logs belong on standard error. Return a nonzero exit code on failure. The
-command is parsed into arguments and executed without a shell. The runner
+command is parsed into arguments and executed without a shell, from the
+directory where the audit command was launched (the repository root in these
+examples). Relative backend script paths are resolved there, not under the
+external data root. The runner
 checks complete, unique item coverage and valid label values, stores the
 validated response, and resumes from valid cached batch outputs. Use a fresh
 output directory if changing the annotator models, prompt, or schema.

@@ -15,13 +15,17 @@ colors are consistent across the two rankings.
 Install the plotting dependencies, then regenerate it with:
 
 ```bash
-python -m pip install matplotlib==3.11.2
-python tools/generate_overview.py
+python -m pip install -r requirements-figures.txt
+python tools/generate_overview.py --output-dir ../audit-data/outputs/overview
 ```
 
-The default command writes `figures/overview.pdf`, `figures/overview.svg`,
-`figures/overview.png`, and `figures/overview-layout-check.json`. To keep the
-released files unchanged, choose a separate destination:
+This writes `overview.pdf`, `overview.svg`, `overview.png`, and
+`overview-layout-check.json` outside the released files. The requirements use
+the spectral constraints so a newer plotting dependency cannot silently
+upgrade NumPy and invalidate strict-tie comparisons. Always check the environment
+after installation with `python -m pip check`.
+
+An alternative local output directory is:
 
 ```bash
 python tools/generate_overview.py --output-dir outputs/overview --stem overview --dpi 300
@@ -66,7 +70,7 @@ Include the vector PDF in LaTeX with:
 ## Empirical result figures
 
 ```bash
-python -m pip install -e '.[plots]'
+python -m pip install -c requirements-pinned.txt -e '.[plots]'
 python tools/render_paper_figures.py --results-dir results --output-dir outputs/paper_figures
 ```
 

@@ -15,8 +15,6 @@ import zipfile
 import numpy as np
 
 ROOT = Path(__file__).resolve().parents[1]
-SCORE_URL = 'https://huggingface.co/datasets/linggm/RouterEval/resolve/main/leaderboard_score.zip'
-ITEM_URL = 'https://huggingface.co/datasets/TIGER-Lab/MMLU-Pro/resolve/main/data/test-00000-of-00001.parquet'
 
 
 def sha256(path):
@@ -52,13 +50,15 @@ def main(argv=None):
     parser.add_argument('--download', action='store_true', help='Download approximately 88 MB from the documented upstream sources')
     args = parser.parse_args(argv)
     root = args.data_root.resolve()
+    if root == ROOT or ROOT in root.parents:
+        parser.error('Use a data-root outside the public repository to keep raw inputs private')
     root.mkdir(parents=True, exist_ok=True)
     spec = json.loads((ROOT / 'configs/upstream_inputs.json').read_text())
     score = args.score_zip or root / 'external_sources/leaderboard_score.zip'
     items = args.mmlu_pro_parquet or root / 'external_cache/mmlu_pro_test.parquet'
     if args.download:
-        download(SCORE_URL, score)
-        download(ITEM_URL, items)
+        download(spec['score_zip_url'], score)
+        download(spec['mmlu_pro_parquet_url'], items)
     verified(score, spec['score_zip_sha256'])
     verified(items, spec['mmlu_pro_parquet_sha256'])
     extracted = root / 'external_sources/leaderboard_score'

@@ -1,5 +1,7 @@
 {
   "upstream": "https://huggingface.co/datasets/linggm/RouterEval",
+  "score_zip_url": "https://huggingface.co/datasets/linggm/RouterEval/resolve/0ee4de2661854b588474c211bebe97dc1e434237/leaderboard_score.zip",
+  "mmlu_pro_parquet_url": "https://huggingface.co/datasets/TIGER-Lab/MMLU-Pro/resolve/b189ec765aa7ed75c8acfea42df31fdae71f97be/data/test-00000-of-00001.parquet",
   "score_zip_sha256": "21e0429f549898afdf229dac9d7f77c49b5ff8061340d8b86ed6031a38a54077",
   "source_sha256": {
     "leaderboard_old.pkl": "8c9d7189697d323d1110e9518ec7cf904d885e36b38cb1859a787135f144e7e4",

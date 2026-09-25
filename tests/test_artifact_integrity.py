@@ -207,18 +207,23 @@ def test_syntax_raw_binary_paths_and_tokens_are_rejected():
 
 
 def test_all_promised_files_present():
-    names = {p.relative_to(ROOT).as_posix() for p in ROOT.rglob("*") if p.is_file()}
+    names = {p.relative_to(ROOT).as_posix() for p in audit.public_paths(ROOT) if p.is_file()}
     assert not audit.REQUIRED_FILES - names
 
 
 def test_local_build_artifacts_are_ignored_but_archive_rejects_them(tmp_path):
-    for directory in ("build", "dist", "outputs", ".venv-check", "package.egg-info"):
+    for directory in ("build", "dist", "outputs", ".venv", ".venv-check", "package.egg-info"):
         location = tmp_path / directory
         location.mkdir()
         (location / "local.txt").write_text("not part of the public artifact")
         assert audit.path_issues(directory + "/local.txt", archive=True)
     issues, hashes, _ = audit.collect_tree(tmp_path, contract=False)
     assert not issues and not hashes
+    leaked = tmp_path / "unexpected" / "responses.npy"
+    leaked.parent.mkdir()
+    leaked.write_bytes(b"not public")
+    issues, _, _ = audit.collect_tree(tmp_path, contract=False)
+    assert any(i["issue"] == "forbidden_binary_or_log" for i in issues)
 
 
 def test_git_requires_anonymous_author_and_committer(tmp_path):
@@ -234,6 +239,19 @@ def test_git_requires_anonymous_author_and_committer(tmp_path):
     findings = audit.check_git_identity(tmp_path)
     assert any(i["issue"] == "nonanonymous_commit_identity" for i in findings)
     assert "Synthetic Test Identity" not in json.dumps(findings)
+
+
+def test_reader_clone_does_not_require_publisher_git_configuration(tmp_path):
+    subprocess.run(["git", "init", "-q", str(tmp_path)], check=True)
+    command = ["git", "-C", str(tmp_path)]
+    subprocess.run(command + ["-c", "user.name=Anonymous", "-c",
+                   "user.email=anonymous@example.invalid", "-c", "commit.gpgsign=false",
+                   "commit", "--allow-empty", "-m", "Anonymous fixture"],
+                   check=True, capture_output=True)
+    assert audit.check_git_identity(tmp_path) == []
+    assert audit.check_git_identity(tmp_path, check_local_identity=True)
+    subprocess.run(command + ["config", "user.name", "Reader Identity"], check=True)
+    assert audit.check_git_identity(tmp_path) == []
 
 
 def test_pdf_author_metadata_checked_when_dependency_is_available():
