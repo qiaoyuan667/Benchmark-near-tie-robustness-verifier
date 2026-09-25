@@ -61,6 +61,7 @@ SENSITIVE_COLUMNS = {
     "pair_id",
 }
 REQUIRED_FILES = {
+    "LICENSE",
     "configs/blinded_content_annotation_schema.json",
     "configs/blinded_content_rubric.md",
     "configs/analysis_protocol.json",

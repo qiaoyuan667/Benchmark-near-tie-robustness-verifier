@@ -202,6 +202,9 @@ The release audit scans the curated public tree; do not assume it anonymizes
 an arbitrary data directory, commit history, Git remote, or hosting account.
 
 Files in this repository do not change third-party redistribution rights.
+The [MIT License](../LICENSE) covers the authors' original contributions as
+specified in the [README](../README.md#license); it does not relicense the
+external benchmark inputs or dependencies.
 Local access to a dataset does not imply permission to republish its text or
 raw records. Use the neutral public artifact and keep the prepared input tree
 separate when preparing an anonymous submission.

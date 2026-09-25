@@ -66,12 +66,19 @@ All commands accept `--benchmarks mmlu_pro,bbh,mmlu,hellaswag,winogrande`; by
 default they run all five. A new or empty output directory is required to avoid
 overwriting a completed run. Running one benchmark is supported for verification.
 
+For the commands below, run from the repository root and set the prepared data
+directory used by the reproduction guide:
+
+```bash
+export FAMILY_DIF_PROJECT_ROOT="$PWD/../audit-data"
+```
+
 ## Discrimination and reliability control
 
 ```bash
 python -m family_dif_benchmark_audit.diagnostics.discrimination \
-  --primary-root outputs \
-  --output-dir outputs/discrimination_diagnostic
+  --primary-root "$FAMILY_DIF_PROJECT_ROOT/outputs" \
+  --output-dir "$FAMILY_DIF_PROJECT_ROOT/outputs/discrimination_diagnostic"
 ```
 
 For every frozen item-group-by-easiness cell, the audit-half standard deviation
@@ -106,8 +113,8 @@ does not equate every aspect of item discrimination or capability demand.
 
 ```bash
 python -m family_dif_benchmark_audit.diagnostics.within_family \
-  --primary-root outputs \
-  --output-dir outputs/within_family_diagnostic
+  --primary-root "$FAMILY_DIF_PROJECT_ROOT/outputs" \
+  --output-dir "$FAMILY_DIF_PROJECT_ROOT/outputs/within_family_diagnostic"
 ```
 
 This diagnostic reuses frozen anchors without fitting MIRT again. Within- and
@@ -139,8 +146,8 @@ whether the cross-family component is larger.
 
 ```bash
 python -m family_dif_benchmark_audit.diagnostics.capability_profile \
-  --primary-root outputs \
-  --output-dir outputs/capability_profile_diagnostic
+  --primary-root "$FAMILY_DIF_PROJECT_ROOT/outputs" \
+  --output-dir "$FAMILY_DIF_PROJECT_ROOT/outputs/capability_profile_diagnostic"
 ```
 
 The audit-only item representation uses **all** selected dimensions:
@@ -180,8 +187,8 @@ Run the independent read-only output check after the run:
 
 ```bash
 python -m family_dif_benchmark_audit.diagnostics.capability_profile \
-  --primary-root outputs \
-  --output-dir outputs/capability_profile_diagnostic \
+  --primary-root "$FAMILY_DIF_PROJECT_ROOT/outputs" \
+  --output-dir "$FAMILY_DIF_PROJECT_ROOT/outputs/capability_profile_diagnostic" \
   --verify-only
 ```
 

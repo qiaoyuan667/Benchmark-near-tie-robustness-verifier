@@ -44,10 +44,11 @@ authorized response matrices and question sources described in `DATA.md`.
 Then prepare the blinded packet:
 
 ```bash
+export FAMILY_DIF_PROJECT_ROOT="$PWD/../audit-data"
 family-dif-content-audit prepare \
-  --signature-input outputs/v3_item_dif_signature_stability/item_family_signatures.csv \
-  --question-file inputs/aligned_questions.csv \
-  --output-dir outputs/v3_blinded_content_annotation \
+  --signature-input "$FAMILY_DIF_PROJECT_ROOT/outputs/v3_item_dif_signature_stability/item_family_signatures.csv" \
+  --question-file "$FAMILY_DIF_PROJECT_ROOT/inputs/aligned_questions.csv" \
+  --output-dir "$FAMILY_DIF_PROJECT_ROOT/outputs/v3_blinded_content_annotation" \
   --schema configs/blinded_content_annotation_schema.json
 ```
 
@@ -70,7 +71,7 @@ Annotation uses a provider-neutral executable supplied by the reproducer:
 
 ```bash
 family-dif-content-audit annotate \
-  --output-dir outputs/v3_blinded_content_annotation \
+  --output-dir "$FAMILY_DIF_PROJECT_ROOT/outputs/v3_blinded_content_annotation" \
   --schema configs/blinded_content_annotation_schema.json \
   --backend-command 'python my_annotation_backend.py' \
   --workers 4 --batch-size 20
@@ -115,8 +116,8 @@ Finally, analyze the resulting local records:
 
 ```bash
 family-dif-content-audit analyze \
-  --signature-input outputs/v3_item_dif_signature_stability/item_family_signatures.csv \
-  --output-dir outputs/v3_blinded_content_annotation
+  --signature-input "$FAMILY_DIF_PROJECT_ROOT/outputs/v3_item_dif_signature_stability/item_family_signatures.csv" \
+  --output-dir "$FAMILY_DIF_PROJECT_ROOT/outputs/v3_blinded_content_annotation"
 ```
 
 All fresh packets, responses, rationales, provider logs, and unblinding keys
@@ -129,9 +130,9 @@ identifiers, and retains row order for Monte Carlo replay:
 
 ```bash
 python -m family_dif_benchmark_audit.interpretation.content_replay export \
-  --annotations outputs/v3_blinded_content_annotation/annotations_with_unblinded_key.csv \
-  --signatures outputs/v3_item_dif_signature_stability/item_family_signatures.csv \
-  --output outputs/public_content_labels.csv
+  --annotations "$FAMILY_DIF_PROJECT_ROOT/outputs/v3_blinded_content_annotation/annotations_with_unblinded_key.csv" \
+  --signatures "$FAMILY_DIF_PROJECT_ROOT/outputs/v3_item_dif_signature_stability/item_family_signatures.csv" \
+  --output "$FAMILY_DIF_PROJECT_ROOT/outputs/public_content_labels.csv"
 ```
 
 Do not replace the released frozen labels with a fresh annotation run when

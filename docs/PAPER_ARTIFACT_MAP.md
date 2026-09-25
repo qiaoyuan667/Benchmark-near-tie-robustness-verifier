@@ -25,7 +25,7 @@ column are in the anonymous repository. Generated paths described in
 | Owner-half residual item-signature replication and within-cell permutations | `family-dif-item-stability` | `results/item_stability/stability_summary.csv` and `protocol.json` |
 | Discovery-selected item-group effect signs and exact group score-shift contributions | `interpretation/item_stability_v3.py`, same command | `results/item_stability/source_validation_summary.csv`, `source_shift_driver_validation_summary.csv`, and `source_shift_decomposition_audit.csv` |
 | Direct penalized joint logistic-MIRT comparison, with reselected K and anchors | `family-dif-direct-mirt` in the separate direct-MIRT environment; `tools/summarize_direct_mirt.py` | `results/direct_mirt/summary.csv`, `paired_cv_comparison.csv`, per-benchmark CV/selection/settings/primary tables |
-| Discrimination- and reliability-matched negative control | `family-dif-discrimination` | `results/discrimination/summary.csv`, fold diagnostics, both control replicate tables, `protocol.json` |
+| Predicted-logit-spread-matched control and held-out reliability diagnostics | `family-dif-discrimination` | `results/discrimination/summary.csv`, fold diagnostics, both control replicate tables, `protocol.json` |
 | Within-family excess and paired cross-minus-within specificity | `family-dif-within-family` | `results/within_family/summary.csv`, observed fold metrics, paired control replicates, `protocol.json` |
 | Capability-profile overlap: random pairing, unrestricted optimal assignment, and three calipers | `family-dif-capability-profile`; `--verify-only` | `results/capability_profile/summary.csv`; per-benchmark matching quality, observed/control/all-swapped aggregates and verification; `protocol.json` |
 

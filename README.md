@@ -14,7 +14,7 @@ The artifact includes the five primary benchmark implementations and all
 reported supplementary analyses: dimension selection, anchor-fraction and
 score-gap sensitivity, composition and owner resampling, population
 perturbations, item-signature replication and item-group attribution, direct
-logistic MIRT, discrimination/reliability matching, within-family specificity,
+logistic MIRT, discrimination matching with reliability checks, within-family specificity,
 capability-profile overlap, and blinded content-audit statistics. It also
 provides a separate interface for maintainers auditing their own benchmark.
 
@@ -57,7 +57,9 @@ data-derived research figures.
 
 These commands check the packaged code and released numerical claims. They do
 not rerun the full five-benchmark estimation. The number of tests may change as
-coverage improves; success means all collected tests pass. Numerical figure
+coverage improves; success means all executed tests pass. PyTorch tests are
+skipped when PyTorch is absent and require the separate direct-MIRT environment.
+Numerical figure
 checks are recorded in `../audit-data/outputs/paper_figures/verification.json`.
 The release audit prints its verification result and compares the public files
 with the shipped checksums under `provenance/`; it does not rewrite them.
@@ -195,8 +197,16 @@ universal behavior across evaluation tasks. MMLU and MMLU-Pro share lineage.
 The [results guide](docs/RESULTS.md) and [artifact map](docs/PAPER_ARTIFACT_MAP.md)
 identify the numerical evidence and its limits.
 
-Authorship is listed as **Anonymous** for review. Upstream data sources retain
-their own authorship, licenses, and terms. This artifact does not assign a new
-license to third-party data. No software license grant is declared in this
-review release; redistribution permissions should not be inferred from the
-absence of author-identifying metadata.
+Authorship is listed as **Anonymous** for review.
+
+## License
+
+The authors' original code, documentation, figures, and released result files
+in this repository are available under the [MIT License](LICENSE), to the
+extent the authors hold rights in those materials.
+
+Third-party dependencies, benchmark datasets, question text, and other
+externally obtained materials retain their upstream licenses and terms.
+This grant does not relicense RouterEval, MMLU-Pro, or other third-party
+benchmark content. Raw benchmark inputs are obtained separately as described
+in the [data guide](docs/DATA.md).

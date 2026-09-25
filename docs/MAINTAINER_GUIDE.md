@@ -99,6 +99,10 @@ only the audit half selects K, fits residual DIF, and constructs the weights
 used on the opposite target half. Both directions are evaluated. The same
 owner never crosses halves, and pairs sharing an owner are excluded.
 
+The headline test pools reversal and eligible-pair counts across both target
+halves. The exported fold counts allow inspection of each direction, but the
+command does not test independent statistical replication in each half.
+
 Counts are checked in both halves. Each must contain every family, at least
 two models per family, and enough models for the inner split (at least eight
 inner-fitting and four inner-validation models). These are computational
@@ -117,7 +121,8 @@ family-dif-audit ../benchmark.npz --output ../audit-custom \
 `--gap-pp 1` means one percentage point, not a score difference of 1.0.
 `--owner-cap 0` disables capping. `--seed` sets the population seed and derives
 the inner/SVD/control seeds; without it the separate paper seed defaults are
-used. All settings and software versions are recorded. Treat overrides and
+used. Configurable audit settings and the Python, NumPy, pandas, SciPy, and
+scikit-learn versions are recorded. Treat overrides and
 multiple alternative analyses as declared sensitivity analyses, not as a
 search for a favorable p-value. Exact paper reproduction also requires the
 paper data, population, and recorded benchmark-specific configuration.

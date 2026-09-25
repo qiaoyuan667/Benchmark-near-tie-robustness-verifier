@@ -16,13 +16,15 @@ Additional released checks:
 
 - all four primary-positive benchmarks remain positive and nominally
   significant under all ten population specifications;
-- WinoGrande is significant under only one specification;
+- WinoGrande is nominally significant only when Mistral/Mixtral is omitted;
 - residual item signatures replicate across disjoint owner halves, with median
   within-cell correlations .308--.589 and all reported cell-permutation
   tests at the Monte Carlo resolution $1/501$;
-- item-group-effect signs reproduce in 58/60 checks and exact group contributions
-  reproduce in 43/60 checks;
-- annotation reliability passes, no confirmatory binary semantic axis passes,
+- item-group-effect signs agree across owner halves in 58/60 discovery-selected
+  checks; signs of item-group score-shift contributions agree in 43/60 checks;
+- median binary inter-annotator Cohen's kappa is .715 and median ordinal
+  Spearman correlation is .800; no binary content axis meets the pre-specified
+  joint effect-size and statistical-significance criteria for both annotators,
   and the maximum absolute paired difference is 9.6 percentage points. The
   corresponding BH-adjusted value is $q=.106$, so it does not pass the
   dual-annotator confirmatory gate.
@@ -34,7 +36,7 @@ The underlying aggregate tables are indexed in `docs/PAPER_ARTIFACT_MAP.md`.
 These later diagnostic analyses are not relabeled as pre-specified primary
 tests. The frozen primary results above remain the primary estimand.
 
-| Benchmark | Direct-MIRT excess (pp) | Discrimination-matched excess (pp) | Cross-minus-within specificity (pp) |
+| Benchmark | Direct-MIRT excess (pp) | Discrimination-matched excess (pp) | Paired cross-minus-within specificity (pp) |
 | --- | ---: | ---: | ---: |
 | MMLU-Pro | +23.1 | +24.0 | +18.0 |
 | BBH | +7.5 | +14.2 | +6.7 |
@@ -43,9 +45,17 @@ tests. The frozen primary results above remain the primary estimand.
 | WinoGrande | +2.7 | -0.8 | +0.0 |
 
 In each column the first four comparisons have $p=1/1001$; WinoGrande has
-$p=.087$, $.683$, and $.496$, respectively. The specificity column subtracts
-within-family excess from cross-family excess using paired random-control
-replicates; it is not a subtraction of raw reversal rates.
+$p=.087$, $.683$, and $.496$, respectively. With reversal rates expressed as
+proportions, the specificity column is:
+
+```text
+100 * [(low-DIF cross-family rate - low-DIF within-family rate)
+       - median(random cross-family rate - random within-family rate)]
+```
+
+Each random difference uses the same subtest for both pair types. The median
+is taken after pairing; it generally differs from subtracting the two
+separately calculated excesses. Rates pool counts across the two target halves.
 
 The capability-profile experiment is an overlap diagnostic, not successful
 identification of a causal family mechanism. `results/capability_profile/`

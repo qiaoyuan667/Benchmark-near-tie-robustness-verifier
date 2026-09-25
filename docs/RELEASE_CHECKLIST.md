@@ -127,8 +127,9 @@ Add the private exclusions to this command to check the archive payload.
 ## 7. Record release decisions
 
 - Record the tested dependency versions and audit outcome.
-- Confirm a software license with the authors; do not imply permission to
-  redistribute upstream data when its license does not grant it.
+- Include the MIT `LICENSE` and preserve the third-party exclusions in the
+  README. Verify that built packages include the license and identify it as
+  MIT; this does not grant rights to redistribute upstream benchmark data.
 - Confirm that the reviewer-facing hosting URL preserves anonymity.
 - After the review period, update authorship/citation information deliberately
   and archive an immutable, versioned release.
