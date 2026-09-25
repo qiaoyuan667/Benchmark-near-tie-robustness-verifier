@@ -3,6 +3,8 @@
 This review checks public documentation against the released implementation,
 numeric tables, and recorded packaging validation. It does not claim a new
 five-benchmark response-level experiment or validation of unobserved inputs.
+The subsequent response-level and command reruns are recorded separately in
+[Reviewer-workflow verification](REPRODUCIBILITY_CHECK.md).
 
 | Claim | Evidence and scope |
 | --- | --- |

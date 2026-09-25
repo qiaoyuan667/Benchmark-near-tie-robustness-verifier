@@ -1,0 +1,216 @@
+{
+  "checks": [
+    {
+      "check": "dependencies",
+      "status": "pass",
+      "returncode": 0,
+      "seconds": 0.5169041249901056
+    },
+    {
+      "check": "family-dif-audit-help",
+      "status": "pass",
+      "returncode": 0,
+      "seconds": 2.379285791073926
+    },
+    {
+      "check": "family-dif-capability-profile-help",
+      "status": "pass",
+      "returncode": 0,
+      "seconds": 2.700602207914926
+    },
+    {
+      "check": "family-dif-content-audit-help",
+      "status": "pass",
+      "returncode": 0,
+      "seconds": 2.2895719578955323
+    },
+    {
+      "check": "family-dif-content-replay-help",
+      "status": "pass",
+      "returncode": 0,
+      "seconds": 2.2722248339559883
+    },
+    {
+      "check": "family-dif-direct-mirt-help",
+      "status": "pass",
+      "returncode": 0,
+      "seconds": 1.791525000007823
+    },
+    {
+      "check": "family-dif-discrimination-help",
+      "status": "pass",
+      "returncode": 0,
+      "seconds": 1.2933683750452474
+    },
+    {
+      "check": "family-dif-gap-sensitivity-help",
+      "status": "pass",
+      "returncode": 0,
+      "seconds": 1.9309872920857742
+    },
+    {
+      "check": "family-dif-item-stability-help",
+      "status": "pass",
+      "returncode": 0,
+      "seconds": 2.2381095410091802
+    },
+    {
+      "check": "family-dif-owner-robustness-help",
+      "status": "pass",
+      "returncode": 0,
+      "seconds": 2.2650115409633145
+    },
+    {
+      "check": "family-dif-ranking-help",
+      "status": "pass",
+      "returncode": 0,
+      "seconds": 2.1690190420486033
+    },
+    {
+      "check": "family-dif-summary-help",
+      "status": "pass",
+      "returncode": 0,
+      "seconds": 2.0584502919809893
+    },
+    {
+      "check": "family-dif-within-family-help",
+      "status": "pass",
+      "returncode": 0,
+      "seconds": 2.0237696249969304
+    },
+    {
+      "check": "audit_release-help",
+      "status": "pass",
+      "returncode": 0,
+      "seconds": 0.07562245801091194
+    },
+    {
+      "check": "build_aligned_all_benchmarks_dataset-help",
+      "status": "pass",
+      "returncode": 0,
+      "seconds": 0.24032654194161296
+    },
+    {
+      "check": "build_routereval_all_benchmarks_mapping-help",
+      "status": "pass",
+      "returncode": 0,
+      "seconds": 0.1869784169830382
+    },
+    {
+      "check": "build_routereval_raw_global_matrix-help",
+      "status": "pass",
+      "returncode": 0,
+      "seconds": 0.1833573749754578
+    },
+    {
+      "check": "build_routereval_row_dataset_mapping-help",
+      "status": "pass",
+      "returncode": 0,
+      "seconds": 0.1883904590504244
+    },
+    {
+      "check": "compare_reproduction-help",
+      "status": "pass",
+      "returncode": 0,
+      "seconds": 0.6640723330201581
+    },
+    {
+      "check": "export_routereval_raw_matrices-help",
+      "status": "pass",
+      "returncode": 0,
+      "seconds": 0.13384362508077174
+    },
+    {
+      "check": "generate_overview-help",
+      "status": "pass",
+      "returncode": 0,
+      "seconds": 22.654135624994524
+    },
+    {
+      "check": "package_release-help",
+      "status": "pass",
+      "returncode": 0,
+      "seconds": 0.07679554203059524
+    },
+    {
+      "check": "prepare_inputs-help",
+      "status": "pass",
+      "returncode": 0,
+      "seconds": 0.23300312494393438
+    },
+    {
+      "check": "render_paper_figures-help",
+      "status": "pass",
+      "returncode": 0,
+      "seconds": 0.8285738750128075
+    },
+    {
+      "check": "reproduce-help",
+      "status": "pass",
+      "returncode": 0,
+      "seconds": 0.039637416950426996
+    },
+    {
+      "check": "summarize_direct_mirt-help",
+      "status": "pass",
+      "returncode": 0,
+      "seconds": 0.5723574169678614
+    },
+    {
+      "check": "synthetic-input",
+      "status": "pass",
+      "returncode": 0,
+      "seconds": 0.4593817919958383
+    },
+    {
+      "check": "maintainer-quick",
+      "status": "pass",
+      "returncode": 0,
+      "seconds": 21.16065391700249
+    },
+    {
+      "check": "maintainer-default",
+      "status": "pass",
+      "returncode": 0,
+      "seconds": 37.196520457975566
+    },
+    {
+      "check": "maintainer-module",
+      "status": "pass",
+      "returncode": 0,
+      "seconds": 9.465581084019504
+    },
+    {
+      "check": "maintainer-api",
+      "status": "pass",
+      "returncode": 0,
+      "seconds": 40.72060316603165
+    },
+    {
+      "check": "interface-agreement",
+      "status": "pass",
+      "returncode": 0,
+      "seconds": 0.04312420904170722
+    },
+    {
+      "check": "content-replay",
+      "status": "pass",
+      "returncode": 0,
+      "seconds": 57.871789750061
+    },
+    {
+      "check": "empirical-figures",
+      "status": "pass",
+      "returncode": 0,
+      "seconds": 0.7696920000016689
+    },
+    {
+      "check": "staged-command-plan",
+      "status": "pass",
+      "returncode": 0,
+      "seconds": 0.0394911669427529
+    }
+  ],
+  "remote_model_calls": 0,
+  "scope": "Installed CLI, synthetic maintainer, released statistics and figures; not full paper fitting"
+}

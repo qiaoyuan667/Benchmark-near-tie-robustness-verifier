@@ -1,0 +1,562 @@
+{
+  "passed": true,
+  "complete": true,
+  "counts": {
+    "match": 91,
+    "mismatch": 0,
+    "missing": 0
+  },
+  "tolerance": {
+    "rtol": 1e-12,
+    "atol": 1e-12,
+    "integer_columns": "exact"
+  },
+  "tables": [
+    {
+      "table": "primary/benchmark_summary.csv",
+      "status": "match",
+      "rows": 5,
+      "columns": 20
+    },
+    {
+      "table": "primary/family_shift_summary.csv",
+      "status": "match",
+      "rows": 25,
+      "columns": 9
+    },
+    {
+      "table": "primary/pairwise_exact_common_family_shift_summary.csv",
+      "status": "match",
+      "rows": 15,
+      "columns": 16
+    },
+    {
+      "table": "primary/per_benchmark/bbh/anchor_purification.csv",
+      "status": "match",
+      "rows": 18,
+      "columns": 10
+    },
+    {
+      "table": "primary/per_benchmark/bbh/composition_bootstrap.csv",
+      "status": "match",
+      "rows": 4000,
+      "columns": 15
+    },
+    {
+      "table": "primary/per_benchmark/bbh/dimension_cv.csv",
+      "status": "match",
+      "rows": 18,
+      "columns": 11
+    },
+    {
+      "table": "primary/per_benchmark/bbh/dimension_selection.csv",
+      "status": "match",
+      "rows": 2,
+      "columns": 7
+    },
+    {
+      "table": "primary/per_benchmark/bbh/family_rank_shifts.csv",
+      "status": "match",
+      "rows": 30,
+      "columns": 7
+    },
+    {
+      "table": "primary/per_benchmark/bbh/matched_random_anchor_control_summary.csv",
+      "status": "match",
+      "rows": 5,
+      "columns": 8
+    },
+    {
+      "table": "primary/per_benchmark/bbh/matched_random_anchor_controls.csv",
+      "status": "match",
+      "rows": 2000,
+      "columns": 17
+    },
+    {
+      "table": "primary/per_benchmark/bbh/owner_bootstrap_family_shifts.csv",
+      "status": "match",
+      "rows": 5,
+      "columns": 8
+    },
+    {
+      "table": "primary/per_benchmark/bbh/ranking_impact_metrics.csv",
+      "status": "match",
+      "rows": 6,
+      "columns": 20
+    },
+    {
+      "table": "primary/per_benchmark/bbh/source_block_bootstrap_summary.csv",
+      "status": "match",
+      "rows": 1,
+      "columns": 6
+    },
+    {
+      "table": "primary/per_benchmark/hellaswag/anchor_purification.csv",
+      "status": "match",
+      "rows": 18,
+      "columns": 10
+    },
+    {
+      "table": "primary/per_benchmark/hellaswag/composition_bootstrap.csv",
+      "status": "match",
+      "rows": 4000,
+      "columns": 15
+    },
+    {
+      "table": "primary/per_benchmark/hellaswag/dimension_cv.csv",
+      "status": "match",
+      "rows": 18,
+      "columns": 11
+    },
+    {
+      "table": "primary/per_benchmark/hellaswag/dimension_selection.csv",
+      "status": "match",
+      "rows": 2,
+      "columns": 7
+    },
+    {
+      "table": "primary/per_benchmark/hellaswag/family_rank_shifts.csv",
+      "status": "match",
+      "rows": 30,
+      "columns": 7
+    },
+    {
+      "table": "primary/per_benchmark/hellaswag/matched_random_anchor_control_summary.csv",
+      "status": "match",
+      "rows": 5,
+      "columns": 8
+    },
+    {
+      "table": "primary/per_benchmark/hellaswag/matched_random_anchor_controls.csv",
+      "status": "match",
+      "rows": 2000,
+      "columns": 17
+    },
+    {
+      "table": "primary/per_benchmark/hellaswag/owner_bootstrap_family_shifts.csv",
+      "status": "match",
+      "rows": 5,
+      "columns": 8
+    },
+    {
+      "table": "primary/per_benchmark/hellaswag/ranking_impact_metrics.csv",
+      "status": "match",
+      "rows": 6,
+      "columns": 20
+    },
+    {
+      "table": "primary/per_benchmark/hellaswag/source_block_bootstrap_summary.csv",
+      "status": "match",
+      "rows": 1,
+      "columns": 6
+    },
+    {
+      "table": "primary/per_benchmark/mmlu/anchor_purification.csv",
+      "status": "match",
+      "rows": 18,
+      "columns": 10
+    },
+    {
+      "table": "primary/per_benchmark/mmlu/composition_bootstrap.csv",
+      "status": "match",
+      "rows": 4000,
+      "columns": 15
+    },
+    {
+      "table": "primary/per_benchmark/mmlu/dimension_cv.csv",
+      "status": "match",
+      "rows": 18,
+      "columns": 11
+    },
+    {
+      "table": "primary/per_benchmark/mmlu/dimension_selection.csv",
+      "status": "match",
+      "rows": 2,
+      "columns": 7
+    },
+    {
+      "table": "primary/per_benchmark/mmlu/family_rank_shifts.csv",
+      "status": "match",
+      "rows": 30,
+      "columns": 7
+    },
+    {
+      "table": "primary/per_benchmark/mmlu/matched_random_anchor_control_summary.csv",
+      "status": "match",
+      "rows": 5,
+      "columns": 8
+    },
+    {
+      "table": "primary/per_benchmark/mmlu/matched_random_anchor_controls.csv",
+      "status": "match",
+      "rows": 2000,
+      "columns": 17
+    },
+    {
+      "table": "primary/per_benchmark/mmlu/owner_bootstrap_family_shifts.csv",
+      "status": "match",
+      "rows": 5,
+      "columns": 8
+    },
+    {
+      "table": "primary/per_benchmark/mmlu/ranking_impact_metrics.csv",
+      "status": "match",
+      "rows": 6,
+      "columns": 20
+    },
+    {
+      "table": "primary/per_benchmark/mmlu/source_block_bootstrap_summary.csv",
+      "status": "match",
+      "rows": 1,
+      "columns": 6
+    },
+    {
+      "table": "primary/per_benchmark/mmlu_pro/anchor_purification.csv",
+      "status": "match",
+      "rows": 18,
+      "columns": 10
+    },
+    {
+      "table": "primary/per_benchmark/mmlu_pro/composition_bootstrap.csv",
+      "status": "match",
+      "rows": 4000,
+      "columns": 15
+    },
+    {
+      "table": "primary/per_benchmark/mmlu_pro/dimension_cv.csv",
+      "status": "match",
+      "rows": 16,
+      "columns": 11
+    },
+    {
+      "table": "primary/per_benchmark/mmlu_pro/dimension_selection.csv",
+      "status": "match",
+      "rows": 2,
+      "columns": 7
+    },
+    {
+      "table": "primary/per_benchmark/mmlu_pro/family_rank_shifts.csv",
+      "status": "match",
+      "rows": 30,
+      "columns": 7
+    },
+    {
+      "table": "primary/per_benchmark/mmlu_pro/matched_random_anchor_control_summary.csv",
+      "status": "match",
+      "rows": 5,
+      "columns": 8
+    },
+    {
+      "table": "primary/per_benchmark/mmlu_pro/matched_random_anchor_controls.csv",
+      "status": "match",
+      "rows": 2000,
+      "columns": 17
+    },
+    {
+      "table": "primary/per_benchmark/mmlu_pro/owner_bootstrap_family_shifts.csv",
+      "status": "match",
+      "rows": 5,
+      "columns": 8
+    },
+    {
+      "table": "primary/per_benchmark/mmlu_pro/ranking_impact_metrics.csv",
+      "status": "match",
+      "rows": 6,
+      "columns": 20
+    },
+    {
+      "table": "primary/per_benchmark/mmlu_pro/source_block_bootstrap_summary.csv",
+      "status": "match",
+      "rows": 1,
+      "columns": 6
+    },
+    {
+      "table": "primary/per_benchmark/winogrande/anchor_purification.csv",
+      "status": "match",
+      "rows": 18,
+      "columns": 10
+    },
+    {
+      "table": "primary/per_benchmark/winogrande/composition_bootstrap.csv",
+      "status": "match",
+      "rows": 4000,
+      "columns": 15
+    },
+    {
+      "table": "primary/per_benchmark/winogrande/dimension_cv.csv",
+      "status": "match",
+      "rows": 18,
+      "columns": 11
+    },
+    {
+      "table": "primary/per_benchmark/winogrande/dimension_selection.csv",
+      "status": "match",
+      "rows": 2,
+      "columns": 7
+    },
+    {
+      "table": "primary/per_benchmark/winogrande/family_rank_shifts.csv",
+      "status": "match",
+      "rows": 30,
+      "columns": 7
+    },
+    {
+      "table": "primary/per_benchmark/winogrande/matched_random_anchor_control_summary.csv",
+      "status": "match",
+      "rows": 5,
+      "columns": 8
+    },
+    {
+      "table": "primary/per_benchmark/winogrande/matched_random_anchor_controls.csv",
+      "status": "match",
+      "rows": 2000,
+      "columns": 17
+    },
+    {
+      "table": "primary/per_benchmark/winogrande/owner_bootstrap_family_shifts.csv",
+      "status": "match",
+      "rows": 5,
+      "columns": 8
+    },
+    {
+      "table": "primary/per_benchmark/winogrande/ranking_impact_metrics.csv",
+      "status": "match",
+      "rows": 6,
+      "columns": 20
+    },
+    {
+      "table": "primary/per_benchmark/winogrande/source_block_bootstrap_summary.csv",
+      "status": "match",
+      "rows": 1,
+      "columns": 6
+    },
+    {
+      "table": "gap_sensitivity/gap_sensitivity_summary.csv",
+      "status": "match",
+      "rows": 30,
+      "columns": 13
+    },
+    {
+      "table": "gap_sensitivity/matched_random_gap_curves_by_fold.csv",
+      "status": "match",
+      "rows": 60000,
+      "columns": 9
+    },
+    {
+      "table": "gap_sensitivity/observed_gap_curves_by_fold.csv",
+      "status": "match",
+      "rows": 60,
+      "columns": 8
+    },
+    {
+      "table": "population_robustness/criterion_summary.csv",
+      "status": "match",
+      "rows": 10,
+      "columns": 5
+    },
+    {
+      "table": "population_robustness/robustness_summary.csv",
+      "status": "match",
+      "rows": 50,
+      "columns": 20
+    },
+    {
+      "table": "population_robustness/selection_audit.csv",
+      "status": "match",
+      "rows": 225,
+      "columns": 10
+    },
+    {
+      "table": "item_stability/source_shift_decomposition_audit.csv",
+      "status": "match",
+      "rows": 50,
+      "columns": 7
+    },
+    {
+      "table": "item_stability/source_shift_driver_validation_summary.csv",
+      "status": "match",
+      "rows": 4,
+      "columns": 5
+    },
+    {
+      "table": "item_stability/source_validation_summary.csv",
+      "status": "match",
+      "rows": 4,
+      "columns": 5
+    },
+    {
+      "table": "item_stability/stability_summary.csv",
+      "status": "match",
+      "rows": 5,
+      "columns": 32
+    },
+    {
+      "table": "discrimination/discrimination_matched_random_controls.csv",
+      "status": "match",
+      "rows": 10000,
+      "columns": 21
+    },
+    {
+      "table": "discrimination/low_dif_fold_diagnostics.csv",
+      "status": "match",
+      "rows": 10,
+      "columns": 20
+    },
+    {
+      "table": "discrimination/original_matched_random_controls.csv",
+      "status": "match",
+      "rows": 10000,
+      "columns": 21
+    },
+    {
+      "table": "discrimination/summary.csv",
+      "status": "match",
+      "rows": 5,
+      "columns": 28
+    },
+    {
+      "table": "within_family/matched_random_controls.csv",
+      "status": "match",
+      "rows": 10000,
+      "columns": 10
+    },
+    {
+      "table": "within_family/observed_fold_metrics.csv",
+      "status": "match",
+      "rows": 10,
+      "columns": 9
+    },
+    {
+      "table": "within_family/summary.csv",
+      "status": "match",
+      "rows": 5,
+      "columns": 16
+    },
+    {
+      "table": "capability_profile/per_benchmark/bbh/all_swapped.csv",
+      "status": "match",
+      "rows": 10,
+      "columns": 21
+    },
+    {
+      "table": "capability_profile/per_benchmark/bbh/controls.csv",
+      "status": "match",
+      "rows": 10000,
+      "columns": 28
+    },
+    {
+      "table": "capability_profile/per_benchmark/bbh/matching_quality.csv",
+      "status": "match",
+      "rows": 10,
+      "columns": 23
+    },
+    {
+      "table": "capability_profile/per_benchmark/bbh/observed.csv",
+      "status": "match",
+      "rows": 2,
+      "columns": 20
+    },
+    {
+      "table": "capability_profile/per_benchmark/hellaswag/all_swapped.csv",
+      "status": "match",
+      "rows": 10,
+      "columns": 21
+    },
+    {
+      "table": "capability_profile/per_benchmark/hellaswag/controls.csv",
+      "status": "match",
+      "rows": 10000,
+      "columns": 28
+    },
+    {
+      "table": "capability_profile/per_benchmark/hellaswag/matching_quality.csv",
+      "status": "match",
+      "rows": 10,
+      "columns": 23
+    },
+    {
+      "table": "capability_profile/per_benchmark/hellaswag/observed.csv",
+      "status": "match",
+      "rows": 2,
+      "columns": 20
+    },
+    {
+      "table": "capability_profile/per_benchmark/mmlu/all_swapped.csv",
+      "status": "match",
+      "rows": 10,
+      "columns": 21
+    },
+    {
+      "table": "capability_profile/per_benchmark/mmlu/controls.csv",
+      "status": "match",
+      "rows": 10000,
+      "columns": 28
+    },
+    {
+      "table": "capability_profile/per_benchmark/mmlu/matching_quality.csv",
+      "status": "match",
+      "rows": 10,
+      "columns": 23
+    },
+    {
+      "table": "capability_profile/per_benchmark/mmlu/observed.csv",
+      "status": "match",
+      "rows": 2,
+      "columns": 20
+    },
+    {
+      "table": "capability_profile/per_benchmark/mmlu_pro/all_swapped.csv",
+      "status": "match",
+      "rows": 10,
+      "columns": 21
+    },
+    {
+      "table": "capability_profile/per_benchmark/mmlu_pro/controls.csv",
+      "status": "match",
+      "rows": 10000,
+      "columns": 28
+    },
+    {
+      "table": "capability_profile/per_benchmark/mmlu_pro/matching_quality.csv",
+      "status": "match",
+      "rows": 10,
+      "columns": 23
+    },
+    {
+      "table": "capability_profile/per_benchmark/mmlu_pro/observed.csv",
+      "status": "match",
+      "rows": 2,
+      "columns": 20
+    },
+    {
+      "table": "capability_profile/per_benchmark/winogrande/all_swapped.csv",
+      "status": "match",
+      "rows": 10,
+      "columns": 21
+    },
+    {
+      "table": "capability_profile/per_benchmark/winogrande/controls.csv",
+      "status": "match",
+      "rows": 10000,
+      "columns": 28
+    },
+    {
+      "table": "capability_profile/per_benchmark/winogrande/matching_quality.csv",
+      "status": "match",
+      "rows": 10,
+      "columns": 23
+    },
+    {
+      "table": "capability_profile/per_benchmark/winogrande/observed.csv",
+      "status": "match",
+      "rows": 2,
+      "columns": 20
+    },
+    {
+      "table": "capability_profile/summary.csv",
+      "status": "match",
+      "rows": 25,
+      "columns": 44
+    }
+  ]
+}

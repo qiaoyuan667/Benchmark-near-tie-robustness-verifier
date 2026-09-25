@@ -358,6 +358,13 @@ python tools/generate_overview.py --output-dir ../audit-data/outputs/overview
 - **Different K or pair counts:** check data order, seeds, population settings,
   Python/dependency versions, and numerical libraries. Exact ties are excluded;
   tiny floating-point changes can alter a denominator.
+- **Small rank-correlation differences:** retain BLAS and thread information as
+  well as package versions. The verified macOS/ARM64 spectral environment used
+  15-thread OpenBLAS; a two-thread stability rerun changed one auxiliary
+  HellaSwag Spearman coefficient by about `5.4e-7`, while its main indicators
+  matched. Restoring the reference thread count reproduced all stability
+  tables at `1e-12`. See the verification record under `provenance/`; do not
+  silently loosen tolerances or replace references to conceal a mismatch.
 - **Direct-MIRT convergence failure:** preserve the failed logs and report the
   failure. An increased iteration budget is a declared alternative setting.
 - **Rerunning stages:** use a new data/output directory or inspect the stage's

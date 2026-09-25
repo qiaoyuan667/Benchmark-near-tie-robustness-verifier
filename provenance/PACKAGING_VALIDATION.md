@@ -1,6 +1,8 @@
 # Packaging validation
 
 These checks validate the release migration, not a new scientific analysis.
+This is the initial packaging record; subsequent clean-checkout numerical
+reruns are documented in [Reviewer-workflow verification](REPRODUCIBILITY_CHECK.md).
 
 - Reconstructed the global 50,265-by-8,577 response matrix from pinned upstream
   files; its SHA-256 matches the original matrix. Item and model metadata match.
@@ -30,8 +32,9 @@ Unit tests additionally check owner disjointness, held-out-data invariance,
 blueprint mass, strict reversal semantics, random-control pooling, missing-pair
 behavior, anonymized output, and numerical aggregates. Tests requiring PyTorch
 are optional in the spectral environment and are run in the direct-MIRT
-environment when validating that estimator. Full five-benchmark primary and
-direct-MIRT fitting were not rerun merely to prepare the release.
+environment when validating that estimator. At initial packaging, full
+five-benchmark primary and direct-MIRT fitting were not rerun merely to prepare
+the release; the later verification record gives the expanded coverage.
 
 Floating-point ties can change across numerical-library versions. The pinned
 spectral and direct-MIRT environments are separate. Do not relax a failed strict

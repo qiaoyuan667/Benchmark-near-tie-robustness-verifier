@@ -46,6 +46,7 @@ def compare(reference, output, analyses):
             if not actual.is_file():
                 record['status'] = 'missing'
             else:
+                expected = frame = None
                 try:
                     expected, frame = pd.read_csv(ref), pd.read_csv(actual)
                     missing = set(expected.columns) - set(frame.columns)
@@ -64,6 +65,19 @@ def compare(reference, output, analyses):
                 except (AssertionError, ValueError, pd.errors.ParserError, pd.errors.EmptyDataError) as error:
                     # Do not include private identifiers or source paths in this report.
                     record.update(status='mismatch', reason=type(error).__name__)
+                    if expected is not None and frame is not None:
+                        record.update(expected_rows=len(expected), observed_rows=len(frame))
+                        record['missing_columns'] = sorted(set(expected.columns) - set(frame.columns))
+                        differing = []
+                        for column in expected.columns.intersection(frame.columns):
+                            try:
+                                pd.testing.assert_series_equal(
+                                    frame[column], expected[column], check_dtype=False,
+                                    check_exact=pd.api.types.is_integer_dtype(expected[column].dtype),
+                                    rtol=1e-12, atol=1e-12)
+                            except AssertionError:
+                                differing.append(column)
+                        record['differing_columns'] = differing
             records.append(record)
     return records
 

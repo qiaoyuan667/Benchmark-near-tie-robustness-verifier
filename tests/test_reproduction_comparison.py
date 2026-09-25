@@ -36,6 +36,7 @@ def test_missing_changed_reordered_and_extra_fields(tmp_path):
     assert check() == 'mismatch'
     expected.assign(count=[3, 6]).to_csv(destination / 'test.csv', index=False)
     assert check() == 'mismatch'
+    assert tool.compare(reference, output, ['primary'])[0]['differing_columns'] == ['count']
     (destination / 'test.csv').write_text('')
     assert check() == 'mismatch'
 
@@ -43,3 +44,24 @@ def test_missing_changed_reordered_and_extra_fields(tmp_path):
 def test_absent_reference_is_error(tmp_path):
     with pytest.raises(ValueError, match='No reference'):
         tool.compare(tmp_path, tmp_path, ['primary'])
+
+
+def test_command_exit_codes_and_report_protection(tmp_path, monkeypatch):
+    import json
+    monkeypatch.setattr(tool, 'ROOT', tmp_path)
+    reference = tmp_path / 'results/primary'
+    reference.mkdir(parents=True)
+    pd.DataFrame({'count': [2]}).to_csv(reference / 'test.csv', index=False)
+    args = ['--data-root', str(tmp_path / 'data'), '--analyses', 'primary']
+    assert tool.main(args) == 1
+    report = tmp_path / 'report.json'
+    assert tool.main(args + ['--allow-missing', '--report', str(report)]) == 0
+    assert json.loads(report.read_text())['complete'] is False
+    with pytest.raises(SystemExit):
+        tool.main(args + ['--report', str(report)])
+    actual = tmp_path / 'data/outputs/v3_five_benchmark_mirt_primary'
+    actual.mkdir(parents=True)
+    pd.DataFrame({'count': [3]}).to_csv(actual / 'test.csv', index=False)
+    assert tool.main(args + ['--allow-missing']) == 1
+    pd.DataFrame({'count': [2]}).to_csv(actual / 'test.csv', index=False)
+    assert tool.main(args) == 0

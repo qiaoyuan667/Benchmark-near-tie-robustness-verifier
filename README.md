@@ -50,10 +50,16 @@ python tools/audit_release.py
 ```
 
 On Windows Command Prompt, activate with `.venv\Scripts\activate` and use
-`set PYTHONDONTWRITEBYTECODE=1` instead of `export`. `make verify` runs the tests
+`set PYTHONDONTWRITEBYTECODE=1` instead of `export`. Multi-line examples below
+otherwise use POSIX shell syntax, not Command Prompt syntax; native Windows
+execution has not been verified. `make verify` runs the tests
 and read-only release audit on systems with Make; figure rendering is separate.
 See [figure provenance](docs/FIGURES.md) for the illustrative overview and the
 data-derived research figures.
+
+The [reviewer-workflow verification record](provenance/REPRODUCIBILITY_CHECK.md)
+lists actual clean-install, command, and numerical reruns, defects corrected,
+and checks that were not performed.
 
 These commands check the packaged code and released numerical claims. They do
 not rerun the full five-benchmark estimation. The number of tests may change as
