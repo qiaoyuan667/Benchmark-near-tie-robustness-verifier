@@ -26,9 +26,9 @@ score is not proposed as a more correct replacement score.
 
 | Your goal | Start here | Need original benchmark data? |
 |---|---|---|
-| Check released tables, code tests, figures, and content statistics | [Offline verification](#install-and-verify-the-artifact) | No |
+| Check released tables, code tests, figures, and content statistics | [Offline verification](docs/REPRODUCE.md) | No |
 | Recompute the paper from item-level responses | [Reproduction guide](docs/REPRODUCE.md) | Yes; verified preparation is provided |
-| Audit a benchmark you maintain | [Maintainer quickstart](#audit-your-own-benchmark) | Your own response matrix and metadata |
+| Audit a benchmark you maintain | [Maintainer quickstart](docs/MAINTAINER_GUIDE.md) | Your own response matrix and metadata |
 | Locate a paper claim or supplementary experiment | [Paper-to-artifact map](docs/PAPER_ARTIFACT_MAP.md) | Depends on the analysis |
 
 ## Install and verify the artifact
